@@ -66,11 +66,4 @@ export const tabs: TabLink[] = [
     color: green,
     mdFileName: 'projects',
   },
-  // {
-  //   name: 'certificates.sass',
-  //   url: '/certificates',
-  //   icon: ['fab', 'sass'],
-  //   color: pink,
-  //   mdFileName: 'certificates',
-  // },
 ];
