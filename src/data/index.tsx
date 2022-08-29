@@ -45,13 +45,13 @@ export const pages: PageLink[] = [
 ];
 
 export const tabs: TabLink[] = [
-  // {
-  //   name: 'skills.js',
-  //   url: '/skills',
-  //   icon: ['fab', 'js'],
-  //   color: jsOrange,
-  //   mdFileName: 'skills',
-  // },
+  {
+    name: 'skills.js',
+    url: '/skills',
+    icon: ['fab', 'js'],
+    color: jsOrange,
+    mdFileName: 'skills',
+  },
   {
     name: '.educationrc',
     url: '/education',

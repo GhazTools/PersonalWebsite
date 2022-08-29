@@ -1,40 +1,39 @@
 ### Technical skills
+- IOS Development 
+- Web Development 
+- Backend Serverside Development
+- Git
+- Debian, MacOS
 
-- [Odoo](https://www.odoo.com/) Development
-- Web Development (End-to-End)
-- Mobile Development (Hybrid/Native)
-- Game Development (Unity 3D)
-- VR Development (Unity 3D)
-- Web Design
-- 3D Modelling / Animation
+### Programming languages 
 
-### Programming languages / tech stacks
+- Python 
+- C++
+- Swift
+- TypeScript
+- JavaScript
+- Java 
 
-- In modern times:
-  - Python
-  - Dart (w/ Flutter)
-  - JavaScript/TypeScript (3+ years)
-    - React.js
-    - Node.js
-    - Express.js
-    - MongoDB
-  - Golang (newcomer)
-- In ancient times:
-  - Java (~1 year)
-  - C#/.NET (3+ years)
-  - PHP/MySQL (~3 years)
+### Frameworks
 
-### Preferences 🙏
+- Flask
+- Tensorflow
+- Django
+- React
+- Angular
+- SwiftUI
+- Spring Boot
 
-- [Debian derivatives](https://www.debian.org/) || [Fedora](https://getfedora.org/) 🐧
-- [Zshell](https://en.wikipedia.org/wiki/Z_shell) ([Oh My Zsh](https://ohmyz.sh/)) 💻
-- [VSCode](https://code.visualstudio.com/) ¯\\_(ツ)_/¯
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) ⌨️
+### Interests
 
-### Special interests 👌
+- Deep Learning
+- Natural Language Processing
+- IOS Development
+- Serverside Development
 
-- \[Virtual\] Aviation ✈
-- Cycling 🚴‍♂️
-- Electronic music production 🎧
-- Entrepreneurship 👨🏻‍💻
-- Technical documentaries 🎥
+### Hobbies
+- Coding 💻
+- Running 🏃‍♂️
+- Reading 📚
+- Gaming 🎮
+- Cooking  🧑‍🍳
