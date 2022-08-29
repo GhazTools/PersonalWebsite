@@ -14,7 +14,7 @@ const StatusBar: React.FC = () => {
 
   return (
     <footer className={classes.root}>
-      <a href={pkg.repository.url} rel="noopener noreferrer" target="_blank">
+      <a href="https://github.com/GhazanfarShahbaz/PersonalWebsite" rel="noopener noreferrer" target="_blank">
         <FontAwesomeIcon
           className={classes.icon}
           icon="code-branch"
