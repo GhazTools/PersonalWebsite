@@ -1,47 +1,25 @@
-### Some of the projects I've worked on so far
+### Some of the major projects I've worked on so far
 
-- [turali.js.org](https://turali.js.org/)
+- [Leetcode Bot (2020)](https://github.com/GhazanfarShahbaz/leetcode-bot) \[_Completed_\]
+  
+  - A discord bot which allows people to get coding questions from leetcode, euler and codechef
+  - Webscraped questions from leetcode, euler and codechef and inserted them into a database
+  - Hosted on heroku, transitioning into hosting it on my own server
 
-  - The web app you are currently looking at.
-  - `React`, `TypeScript`
+- [The Shoe Tab (2020)](https://github.com/GhazanfarShahbaz/The_Shoe_Tab) \[_Completed_\]
 
-- [GetKernel](https://getkernel.now.sh/) \[_Half-baked_\]
+  - A web app which shows the release date of upcoming shoes
+  - Webscraped data from a shoe website and automated the process of scraping data
+  - Was hosted on heroku, no longer hosted
 
-  - The kernel store for Ubuntu derivatives.
-  - `NextJS`
 
-- [deepintr.js.org](https://deepintr.js.org/)
+- [The Mouseion (2020)](https://www.ghazanfarshahbaz.com/the_mouseion) \[_Completed_\]
 
-  - Landing page for an online community.
-  - `GatsbyJS`, `React`, `TypeScript`
+  - A web app which reccommends books, movies and, video games based on what you search using KNN
+  - Uses flask as its backend and utilizes pandas for data cleaning and comparison
+  - Hosted on this website using a werkezeug controller and uwsgi
 
-- [Girizgah](https://turali.js.org/girizgah/)
+- [LoggedIn (2019)](https://ghazanfarshahbaz.github.io/LoggedIN/) \[_Completed_\]
 
-  - Greeter (LightDM Webkit) theme for Pardus Linux.
-  - `React`
-
-- [Piyango.online](https://piyango.online/) \[_Abandoned_\]
-
-  - [Frontend](https://piyango.online/) | [Backend](https://dev.piyango.online/)
-  - Similar to _Bilen Adam_, which is listed below.
-  - `React`, `TypeScript`, `Serverless Functions`
-
-- [Astroloci](https://play.google.com/store/apps/details?id=com.astroloci.app)
-
-  - A horoscope application for Android.
-  - `Java`, `Express.js`
-
-- [Bilen Adam](https://play.google.com/store/apps/details?id=com.caglarturali.bilenadam)
-
-  - Lottery machine for Turkey's national lottery games.
-  - `C#`, `Unity 3D`
-
-- [2●48](https://play.google.com/store/apps/details?id=com.caglarturali.the2o48)
-
-  - A clone of the popular puzzle game 2048, with unlimited levels.
-  - `C#`, `Unity 3D`
-
-- [WatcherCatBot](https://github.com/caglarturali/WatcherCatBot/)
-
-  - A Telegram bot that returns popularity info of the given Linux distribution.
-  - `Node.js`, `Express.js`
+  - A web app created at the end of All Star Code's summer intensive. Connects users by allowing them to access a persons linkedIn, instagram and other social media accounts
+  - Uses js to populate random fake users

@@ -59,13 +59,13 @@ export const tabs: TabLink[] = [
     color: midBlue,
     mdFileName: 'education',
   },
-  // {
-  //   name: 'projects.config',
-  //   url: '/projects',
-  //   icon: 'sliders-h',
-  //   color: green,
-  //   mdFileName: 'projects',
-  // },
+  {
+    name: 'projects.config',
+    url: '/projects',
+    icon: 'sliders-h',
+    color: green,
+    mdFileName: 'projects',
+  },
   // {
   //   name: 'certificates.sass',
   //   url: '/certificates',
