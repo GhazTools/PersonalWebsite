@@ -66,4 +66,11 @@ export const tabs: TabLink[] = [
     color: green,
     mdFileName: 'projects',
   },
+  {
+    name: 'resume.md',
+    url: '/resume',
+    icon: 'file',
+    color: pink,
+    mdFileName: 'resume',
+  },
 ];
