@@ -10,11 +10,17 @@
 -   Honors and Awards: Thomas Hunters Honors Program, Cooperman Fellow,
     Dean's List, Peter F. Vallone Scholarship
 -   Work Experience: UTA - Introduction to Computer Science (Fall 2020,
-    Fall 2021, Spring 2022, Fall 2022)
+    Fall 2021, Spring 2022, Fall 2022), Data Structures and Algorithms (Fall 2022, Spring 2023), Natural Language Processing (Spring 2023)
 
 ## PROFESSIONAL EXPERIENCE
 
-### **Undergraduate Machine Research Assistant at Hunter College** *AUG  2022 - PRESENT*
+### **Natural Language Processing Research Assistant at Hunter College, Lab of Sarah Ita Levitan** *AUG  2022 - PRESENT*
+
+### Hunter College, Lab of Susan L. Epstein *Remote*
+####  **Undergraduate Machine Research Assistant** *AUG  2022 - PRESENT*
+-   Devised a system to skip the watering of plants using weather data and projections in the vicinity of Farmbot
+-   Automated the process of saving Farmbot plant data to a remote server using SQlAlchemy and Flask
+-   Engineered a system to calculate the water pressure to give plants the appropriate amount of water using Arduino
 
 ### Amazon *New York, NY*
 #### **Software Development Engineer Intern** *AUG 2022 - NOV 2022*
