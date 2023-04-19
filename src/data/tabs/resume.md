@@ -14,8 +14,13 @@
 
 ## PROFESSIONAL EXPERIENCE
 
-### **Software Development Engineer Intern at Amazon** *AUG 2022 -  PRESENT*
 ### **Undergraduate Machine Research Assistant at Hunter College** *AUG  2022 - PRESENT*
+
+### Amazon *New York, NY*
+#### **Software Development Engineer Intern** *AUG 2022 - NOV 2022*
+-   Engineered a system to log feature statistics like feature hits into *AWS CloudWatch* using *Apache Spark* and *OpenTelemetry*
+-   Incorporated integration tests to verify service logic and decrease development time using the *mockito* library
+-   Introduced a backend service to delegate tasks based on their priority using data saved in *AWS Cloudwatch*
 
 ### Bloomberg *New York, NY*
 #### **Software Engineer Intern** *JUN 2022 - AUG 2022*
@@ -68,6 +73,6 @@
 #### **Coding Languages:** Python, C++, Swift, JavaScript, Java 
 #### **Frameworks**: Flask, Django, Spring Boot, Angular, React
 #### **Query Languages:** SQL, NoSQL, Elastic Search 
-#### **Interests:** Coding,Running, Reading, Gaming, Cooking
+#### **Interests:** Coding, Running, Reading, Gaming, Cooking
 #### **Languages:** Japanese (Beginner), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
 #### **Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), AllStar Code (2018)
