@@ -6,7 +6,6 @@
 - Debian, MacOS
 
 ### Programming languages 
-
 - Python 
 - C++
 - Swift
@@ -15,7 +14,6 @@
 - Java 
 
 ### Frameworks
-
 - Flask
 - Tensorflow
 - Django
@@ -25,11 +23,11 @@
 - Spring Boot
 
 ### Interests
-
 - Deep Learning
 - Natural Language Processing
 - IOS Development
 - Serverside Development
+- Arduino Development
 
 ### Hobbies
 - Coding 💻

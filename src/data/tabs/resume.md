@@ -7,20 +7,23 @@
     Linear Algebra
 -   Clubs/Organizations: Hunter ACM, Open Source Club, Google Developer
     Student Club
--   Honors and Awards: Thomas Hunters Honors Program, Cooperman Fellow,
+-   Honors and Awards: Summa Cum Laude, Phi Beta Kappa, Thomas Hunters Honors Program, Cooperman Fellow,
     Dean's List, Peter F. Vallone Scholarship
 -   Work Experience: UTA - Introduction to Computer Science (Fall 2020,
     Fall 2021, Spring 2022, Fall 2022), Data Structures and Algorithms (Fall 2022, Spring 2023), Natural Language Processing (Spring 2023)
 
 ## PROFESSIONAL EXPERIENCE
+### Bloomberg *New York, NY*
+#### **Software Engineer** *JUN 2023 - PRESENT*
 
 ### **Natural Language Processing Research Assistant at Hunter College, Lab of Sarah Ita Levitan** *AUG  2022 - PRESENT*
+-   Constructed an application to create human sounding natural lanaguage audio files using the *AWS Polly Cli*
 
 ### Hunter College, Lab of Susan L. Epstein *Remote*
 ####  **Undergraduate Machine Research Assistant** *AUG  2022 - PRESENT*
 -   Devised a system to skip the watering of plants using weather data and projections in the vicinity of Farmbot
--   Automated the process of saving Farmbot plant data to a remote server using SQlAlchemy and Flask
--   Engineered a system to calculate the water pressure to give plants the appropriate amount of water using Arduino
+-   Automated the process of saving Farmbot plant data to a remote server using *SQlAlchemy* and *Flask*
+-   Engineered a system to calculate the water pressure to give plants the appropriate amount of water using *Arduino*
 
 ### Amazon *New York, NY*
 #### **Software Development Engineer Intern** *AUG 2022 - NOV 2022*
@@ -34,13 +37,11 @@
 -   Developed endpoints which saved and retrieved users' previous 10 selections using *SQL* and an inhouse backend service
 -   Integrated endpoints to display users' recent selections in tabular form and update them as the user made changes
 
-
 ### Hunter College, Lab of Susan L. Epstein *Remote*
 #### **Undergraduate Machine Learning Research Assistant** *SEP 2021 - MAY  2022*
 -   Implemented a Watershed based algorithm for navigating an indoor space by splitting a map into sections
 -   Calculated the complexity of different maps using features such as number of neighbors of a section and area
 -   Automated the process of extracting information from a simplified and cleaned map using *OpenCV* and graph theory
-
 
 ### Bloomberg **Remote** 
 #### **Software Engineer Intern** *Jun 2021 - August 2021*
@@ -49,13 +50,11 @@
 -   Constructed a backend service using inhouse technologies to handle requests made by users from the frontend
 -   Spearheaded the development of a front-end application which involved displaying and transforming data in several ways
 
-
 ### UnitedHealth Group *Remote*
 #### **Software Engineer Intern** *SEP 2020 - DEC 2020*
 -   Transformed a search query that used *SQL* to use elastic search leading to an improvement in runtime by 200%
 -   Replaced an orient backend with *spring boot* in order to improve efficiency and reliance
 -   Reconstructed an *angular* framework to use *spring boot* endpoints rather than orient endpoints
-
 
 ### UnitedHealth Group *Remote*
 #### **Software Engineer Intern** *JUN 2020 - AUG 2020*
@@ -76,9 +75,9 @@
 -   Managed and kept track of club expenditures and incoming revenue such as bills, reimbursements, and event expenses
 
 ## ADDITIONAL INFORMATION
-#### **Coding Languages:** Python, C++, Swift, JavaScript, Java 
-#### **Frameworks**: Flask, Django, Spring Boot, Angular, React
+#### **Coding Languages:** Python, C++, Swift, TypeScript, JavaScript, Java 
+#### **Frameworks**: Flask, Django, FastApi, Express, Spring Boot, Angular, React
 #### **Query Languages:** SQL, NoSQL, Elastic Search 
 #### **Interests:** Coding, Running, Reading, Gaming, Cooking
-#### **Languages:** Japanese (Beginner), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
+#### **Languages:** Japanese (Conversational), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
 #### **Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), AllStar Code (2018)
