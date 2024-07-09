@@ -1,13 +1,13 @@
 /**
  * IconLink component.
  */
-import React from 'react';
-import { Link } from '@reach/router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { createUseStyles } from 'react-jss';
-import { ContactItem } from '../../models';
-import styles from './styles';
+import React from "react";
+import { Link } from "@reach/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { createUseStyles } from "react-jss";
+import { ContactItem } from "../../models";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 

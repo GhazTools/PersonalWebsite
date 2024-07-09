@@ -10,5 +10,11 @@
     "url": "https://linkedin.com/in/GhazanfarShahbaz",
     "icon": ["fab", "linkedin"],
     "isMain": false
+  },
+  {
+    "name": "Blog",
+    "url": "https://blog.ghaz.dev",
+    "icon": ["fas", "blog"],
+    "isMain": false
   }
 ]
