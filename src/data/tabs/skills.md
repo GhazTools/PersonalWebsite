@@ -8,21 +8,46 @@
 ### Programming languages 
 - Python 
 - C++
+- Rist
 - Swift
 - TypeScript
 - JavaScript
 - Java 
 
-### Frameworks
-- Flask
+### Machine Learning Frameworks
 - Tensorflow
+- Pytorch
+
+### Backend Development Frameworks
+- Flask
 - Django
+- FastApi
+- Sanic
+- Express
+- Spring Boot
+- SqlAlchemy
+- Alembic
+- Pybind
+
+### Mobile App Development Framework 
+- SwiftUI
+
+### Frontend Development Frameworks
 - React
 - Angular
-- SwiftUI
-- Spring Boot
 
-### Interests
+### Rsearch Interests
+- Text Summarization
+- Speech Synthesis
+- Computational Linguistics
+- Machine Translation
+- Stance Detection
+- Medical Image Analysis
+- Medical Natural Language Processing
+- Computaional Medicine
+- Machine Learning in Health Care
+
+### Other Interests
 - Deep Learning
 - Natural Language Processing
 - IOS Development
@@ -30,8 +55,11 @@
 - Arduino Development
 
 ### Hobbies
+- Piano 🎹
+- Tennis🎾
 - Coding 💻
 - Running 🏃‍♂️
 - Reading 📚
 - Gaming 🎮
 - Cooking  🧑‍🍳
+- Rock Climbing 🧗‍♂️

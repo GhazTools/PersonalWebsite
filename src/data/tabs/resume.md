@@ -16,11 +16,12 @@
 ### Bloomberg *New York, NY*
 #### **Software Engineer** *JUN 2023 - PRESENT*
 
-### **Natural Language Processing Research Assistant at Hunter College, Lab of Sarah Ita Levitan** *AUG  2022 - PRESENT*
--   Constructed an application to create human sounding natural lanaguage audio files using the *AWS Polly Cli*
+### Hunter College, Lab of Sarah Ita Levitan *Remote*
+### **Machine Learning Research Assistant** *JUL  2024 - PRESENT*
+### **Undergraduate Machine Learning Research Assistant** *JAN  2023 - AUG 2023*
 
 ### Hunter College, Lab of Susan L. Epstein *Remote*
-####  **Undergraduate Machine Research Assistant** *AUG  2022 - PRESENT*
+####  **Undergraduate Machine Research Assistant** *AUG  2022 - AUG 2023*
 -   Devised a system to skip the watering of plants using weather data and projections in the vicinity of Farmbot
 -   Automated the process of saving Farmbot plant data to a remote server using *SQlAlchemy* and *Flask*
 -   Engineered a system to calculate the water pressure to give plants the appropriate amount of water using *Arduino*
@@ -75,9 +76,11 @@
 -   Managed and kept track of club expenditures and incoming revenue such as bills, reimbursements, and event expenses
 
 ## ADDITIONAL INFORMATION
-#### **Coding Languages:** Python, C++, Swift, TypeScript, JavaScript, Java 
-#### **Frameworks**: Flask, Django, FastApi, Express, Spring Boot, Angular, React
-#### **Query Languages:** SQL, NoSQL, Elastic Search 
-#### **Interests:** Coding, Running, Reading, Gaming, Cooking
+#### **Coding Languages:** Python, C++, Rust, Swift, TypeScript, JavaScript, Java 
+#### **Frameworks:** Flask, Tensorflow, Pandas, Pytorch, SwiftUI, Django, FastApi, Express, Spring Boot, Angular, React, SQLAlchmey, Alembic
+#### **Query Languages:** SQL, NoSQL, Elastic Search, MongoDB, Redis
+#### **Research Interests:**  Text Summarization, Speech Synthesis, Computational Linguistics, Machine Translation
+#### **Interests:** Coding, Running, Reading, Gaming, Cooking, Rock Climbing, Piano, Tennis
 #### **Languages:** Japanese (Conversational), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
-#### **Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), AllStar Code (2018)
+#### **Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), All Star Code (2018)
+#### **Professional Affiliations:** All Star Code, Codepath
