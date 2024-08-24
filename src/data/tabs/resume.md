@@ -70,14 +70,17 @@
 
 ## LEADERSHIP AND ACTIVITIES
 ### Google Developer Student Club *NEW YORK, NY*
-#### ***Core Tech Lead, Treasurer*** → ***DSC Lead*** → ***Core Tech Lead, Advisor*** *AUG 2020 - PRESENT*
+#### ***Core Tech Lead, Treasurer*** → ***DSC Lead*** → ***Core Tech Lead, Advisor*** *AUG 2020 - AUG 2023*
 -   Planned, coordinated, and taught google technologies and frameworks to club members and other students
 -   Attended other developer student club events in order to learn about new technologies and implementations
 -   Managed and kept track of club expenditures and incoming revenue such as bills, reimbursements, and event expenses
 
 ## ADDITIONAL INFORMATION
 #### **Coding Languages:** Python, C++, Rust, Swift, TypeScript, JavaScript, Java 
-#### **Frameworks:** Flask, Tensorflow, Pandas, Pytorch, SwiftUI, Django, FastApi, Express, Spring Boot, Angular, React, SQLAlchmey, Alembic
+#### **Machine Learning Frameworks:** Tensorflow, Pytorch
+#### **Backend Development Frameworks:** Flask, Django, FastApi, Sanic, Express, Spring Boot, SqlAlchemy, Alembic, Pybind
+#### **Mobile App Development Frameworks:** SwiftUI
+#### **Frontend Development Frameworks:** React, Angular
 #### **Query Languages:** SQL, NoSQL, Elastic Search, MongoDB, Redis
 #### **Research Interests:**  Text Summarization, Speech Synthesis, Computational Linguistics, Machine Translation
 #### **Interests:** Coding, Running, Reading, Gaming, Cooking, Rock Climbing, Piano, Tennis
