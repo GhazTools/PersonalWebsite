@@ -17,11 +17,11 @@
 #### **Software Engineer** *JUN 2023 - PRESENT*
 
 ### Hunter College, Lab of Sarah Ita Levitan *Remote*
-#### **Machine Learning Research Assistant** *JUL  2024 - PRESENT*
-#### **Undergraduate Machine Learning Research Assistant** *JAN  2023 - AUG 2023*
+#### **Natural Language Processing Research Assistant** *JUL 2024 - PRESENT*
+#### **Undergraduate Natural Language Processing Research Assistant** *JAN 2023 - AUG 2023*
 
 ### Hunter College, Lab of Susan L. Epstein *Remote*
-####  **Undergraduate Machine Research Assistant** *AUG  2022 - AUG 2023*
+####  **Undergraduate Machine Research Assistant** *AUG 2022 - AUG 2023*
 -   Devised a system to skip the watering of plants using weather data and projections in the vicinity of Farmbot
 -   Automated the process of saving Farmbot plant data to a remote server using *SQlAlchemy* and *Flask*
 -   Engineered a system to calculate the water pressure to give plants the appropriate amount of water using *Arduino*
