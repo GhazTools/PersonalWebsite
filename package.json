@@ -10,8 +10,8 @@
   "homepage": "https://turali.js.org",
   "license": "GNU GPLv3",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test:base": "react-scripts test --passWithNoTests",
     "test": "npm run test:base -- --watchAll=false",
     "test:watch": "npm run test:base -- --watchAll",
