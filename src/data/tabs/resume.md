@@ -76,14 +76,24 @@
 -   Managed and kept track of club expenditures and incoming revenue such as bills, reimbursements, and event expenses
 
 ## ADDITIONAL INFORMATION
-#### **Coding Languages:** Python, C++, Rust, Swift, TypeScript, JavaScript, Java 
-#### **Machine Learning Frameworks:** Tensorflow, Pytorch
-#### **Backend Development Frameworks:** Flask, Django, FastApi, Sanic, Express, Spring Boot, SqlAlchemy, Alembic, Pybind
-#### **Mobile App Development Frameworks:** SwiftUI
-#### **Frontend Development Frameworks:** React, Angular
-#### **Query Languages:** SQL, NoSQL, Elastic Search, MongoDB, Redis
-#### **Research Interests:**  Text Summarization, Speech Synthesis, Computational Linguistics, Machine Translation
-#### **Interests:** Coding, Running, Reading, Gaming, Cooking, Rock Climbing, Piano, Tennis
-#### **Languages:** Japanese (Conversational), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
-#### **Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), All Star Code (2018)
-#### **Professional Affiliations:** All Star Code, Codepath
+**Coding Languages:** Python, C++, Rust, Swift, TypeScript, JavaScript, Java 
+
+**Machine Learning Frameworks:** Tensorflow, Pytorch
+
+**Backend Development Frameworks:** Flask, Django, FastApi, Sanic, Express, Spring Boot, SqlAlchemy, Alembic, Pybind
+
+**Mobile App Development Frameworks:** SwiftUI
+
+**Frontend Development Frameworks:** React, Angular
+
+**Query Languages:** SQL, NoSQL, Elastic Search, MongoDB, Redis
+
+**Research Interests:**  Text Summarization, Speech Synthesis, Computational Linguistics, Machine Translation
+
+**Interests:** Coding, Running, Reading, Gaming, Cooking, Rock Climbing, Piano, Tennis
+
+**Languages:** Japanese (Conversational), Chinese (Conversational), Spanish (Beginner), Urdu (Native)
+
+**Professional Affiliations:** All Star Code, Codepath
+
+**Events/Activities:** Greylock Techfair (2022, 2021), Facebook ABCS (2021), Codepath TA (2021), Goldman Sachs Possibilities Summit (2021), Goldman Sachs Insight Series (2020), Google CSSI (2019), All Star Code (2018)
