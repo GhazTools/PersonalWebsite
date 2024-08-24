@@ -17,8 +17,8 @@
 #### **Software Engineer** *JUN 2023 - PRESENT*
 
 ### Hunter College, Lab of Sarah Ita Levitan *Remote*
-### **Machine Learning Research Assistant** *JUL  2024 - PRESENT*
-### **Undergraduate Machine Learning Research Assistant** *JAN  2023 - AUG 2023*
+#### **Machine Learning Research Assistant** *JUL  2024 - PRESENT*
+#### **Undergraduate Machine Learning Research Assistant** *JAN  2023 - AUG 2023*
 
 ### Hunter College, Lab of Susan L. Epstein *Remote*
 ####  **Undergraduate Machine Research Assistant** *AUG  2022 - AUG 2023*
