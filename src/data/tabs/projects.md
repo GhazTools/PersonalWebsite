@@ -1,4 +1,13 @@
 ### Some of the Major Projects I'm Working On
+- [Eisenhower Timer Matrix (2024 - PRESENT)](https://www.eisenhowertimer.com) \[_In Progress_\]
+  - A productivity web application inspired by the Eisenhower Matrix that helps users prioritize tasks by urgency and importance.
+  - Built with *React.js*, *Redux*, and *Material UI* to provide a clean and intuitive user experience.
+  - Implemented *IndexedDB* for offline persistence and local task storage, ensuring data remains available without server dependencies.
+  - Designed a dynamic quadrant-based interface where users can drag and drop tasks across quadrants to manage focus areas.
+  - Developed logic to track time spent per quadrant and display completion insights to help users visualize productivity patterns.
+  - Integrated subtle animations and progress prompts to enhance user engagement and clarity.
+  - Deployed on a lightweight stack optimized for local-first performance and minimal server cost.
+
 - [Ghazs Personal Cookies (2022 - PRESENT)](https://github.com/GhazanfarShahbaz/Ghazs-Personal-Cookies) \[_In Progress_\]
   - A *werkezeug* application that renders multiple different backend applications as one.
   - Incorporated *flask* and *sqlalchemy* to create a tools application that saves different types of data and allows me to access them

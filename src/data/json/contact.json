@@ -13,8 +13,14 @@
   },
   {
     "name": "Blog",
-    "url": "https://blog.ghaz.dev",
+    "url": "https://www.cat-cache.com",
     "icon": ["fas", "blog"],
+    "isMain": false
+  },
+  {
+    "name": "Buy Me a Coffee",
+    "url": "https://buymeacoffee.com/ghazshahbaz",
+    "icon": ["fas", "coffee"],
     "isMain": false
   }
 ]
