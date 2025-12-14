@@ -1,13 +1,14 @@
 /**
  * Main layout - Modernized with MUI
  */
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Box, Drawer, useTheme, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import Header from "./components/Header";
 import LeftBar from "./components/LeftBar";
 import Explorer from "./components/Explorer";
 import StatusBar from "./components/StatusBar";
+import CommandPalette from "../../components/CommandPalette";
 import { ContactItem, TabLink } from "../../models";
 
 export interface TabProps {
@@ -30,8 +31,22 @@ const MainLayout: React.FC<MainLayoutProps> = ({
 }) => {
   const [explorerOpen, setExplorerOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  // Handle ⌘K / Ctrl+K to open command palette
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      e.preventDefault();
+      setCommandPaletteOpen((prev) => !prev);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
 
   return (
     <Box
@@ -154,6 +169,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       >
         <StatusBar />
       </Box>
+
+      {/* Command Palette (⌘K) */}
+      <CommandPalette
+        open={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+      />
     </Box>
   );
 };

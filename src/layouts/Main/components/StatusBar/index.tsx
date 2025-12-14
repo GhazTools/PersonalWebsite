@@ -2,9 +2,12 @@
  * StatusBar component - Modern terminal-style status bar
  */
 import React, { useState, useEffect } from "react";
-import { Box, Link, Typography, useTheme } from "@mui/material";
+import { Box, Link, Typography, useTheme, Tooltip } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+
+// Last updated date - update this when making significant changes
+const LAST_UPDATED = "December 2025";
 
 const StatusBar: React.FC = () => {
   const theme = useTheme();
@@ -82,6 +85,28 @@ const StatusBar: React.FC = () => {
           </Typography>
         </Link>
 
+        <Tooltip title="Last site update" arrow>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              alignItems: "center",
+              gap: 0.5,
+              px: 1,
+              py: 0.25,
+              borderRadius: 0.5,
+              color: "#61afef",
+            }}
+          >
+            <FontAwesomeIcon icon="calendar-check" style={{ fontSize: 10 }} />
+            <Typography
+              variant="caption"
+              sx={{ fontSize: "0.65rem", fontWeight: 500 }}
+            >
+              {LAST_UPDATED}
+            </Typography>
+          </Box>
+        </Tooltip>
+
         <Box
           sx={{
             display: "flex",
@@ -115,6 +140,34 @@ const StatusBar: React.FC = () => {
 
       {/* Right section */}
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Tooltip title="Quick navigation" arrow>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              alignItems: "center",
+              gap: 0.5,
+              px: 1,
+              py: 0.25,
+              borderRadius: 0.5,
+              cursor: "pointer",
+              transition: "all 0.2s",
+              "&:hover": {
+                backgroundColor: isDark
+                  ? "rgba(255, 255, 255, 0.05)"
+                  : "rgba(0, 0, 0, 0.04)",
+              },
+            }}
+          >
+            <FontAwesomeIcon icon="keyboard" style={{ fontSize: 10 }} />
+            <Typography
+              variant="caption"
+              sx={{ fontSize: "0.65rem", fontWeight: 500 }}
+            >
+              ⌘K
+            </Typography>
+          </Box>
+        </Tooltip>
+
         <Box
           sx={{
             display: { xs: "none", sm: "flex" },

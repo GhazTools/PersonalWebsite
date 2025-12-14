@@ -30,6 +30,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 import portfolioData from "../../data/json/portfolio.json";
 import SEO from "../../components/SEO";
+import { TechBadge } from "../../components/TechBadge";
 
 type ProjectCategory = "all" | "featured" | "completed" | "minor";
 
@@ -207,25 +208,32 @@ const ProjectCard: React.FC<{
           </Box>
         )}
 
-        {/* Tags */}
+        {/* Tech Stack Badges */}
         {project.technologies && (
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: "auto" }}>
-            {project.technologies.slice(0, 5).map((tag, tagIdx) => (
-              <Typography
-                key={tag}
-                variant="caption"
+            {project.technologies.slice(0, 5).map((tech) => (
+              <TechBadge key={tech} tech={tech} isDark={isDark} />
+            ))}
+            {project.technologies.length > 5 && (
+              <Box
+                component="span"
                 sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  px: 1,
+                  py: 0.25,
+                  borderRadius: 1,
+                  backgroundColor: isDark
+                    ? "rgba(255,255,255,0.05)"
+                    : "rgba(0,0,0,0.04)",
                   color: theme.palette.text.secondary,
                   fontSize: "0.7rem",
                   fontFamily: "monospace",
                 }}
               >
-                {tag}
-                {tagIdx < Math.min(project.technologies!.length, 5) - 1 && (
-                  <span style={{ margin: "0 4px" }}>•</span>
-                )}
-              </Typography>
-            ))}
+                +{project.technologies.length - 5}
+              </Box>
+            )}
           </Box>
         )}
       </Box>

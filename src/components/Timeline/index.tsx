@@ -56,7 +56,8 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
     const lastCard = cardRefs.current[cardRefs.current.length - 1];
     if (lastCard) {
       const lastRect = lastCard.getBoundingClientRect();
-      const totalH = lastRect.bottom - containerRect.top + 100;
+      // End the squiggly line at the bottom of the last card (not extending past)
+      const totalH = lastRect.bottom - containerRect.top + 20;
 
       // Only update state if values actually changed
       if (
@@ -185,7 +186,7 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
           </Box>
         </Box>
 
-        {/* To Be Continued Card */}
+        {/* To Be Continued Card - positioned outside/below the timeline */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -196,7 +197,10 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              mt: 10,
+              mt: 12,
+              pt: 4,
+              position: "relative",
+              zIndex: 10, // Ensure it's above the squiggly line
             }}
           >
             <Box

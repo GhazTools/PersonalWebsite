@@ -27,6 +27,8 @@ import {
   faIdCard,
   faTrophy,
   faEnvelope,
+  faCalendarCheck,
+  faKeyboard,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -57,4 +59,6 @@ library.add(
   faIdCard,
   faTrophy,
   faEnvelope,
+  faCalendarCheck,
+  faKeyboard,
 );

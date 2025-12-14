@@ -7,6 +7,8 @@ export interface SEOProps {
   description?: string;
   lang?: string;
   meta?: HTMLMetaElement[];
+  image?: string;
+  pathname?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -14,8 +16,12 @@ const SEO: React.FC<SEOProps> = ({
   description,
   lang = "en",
   meta = [],
+  image,
+  pathname = "",
 }) => {
   const metaDescription = description || metadata.description;
+  const metaImage = image || metadata.image;
+  const canonicalUrl = `${metadata.homepage}${pathname}`;
 
   return (
     <Helmet
@@ -34,70 +40,100 @@ const SEO: React.FC<SEOProps> = ({
           content: metadata.keywords,
         },
         {
-          name: "canonical",
-          content: metadata.homepage,
-        },
-        {
           name: "theme-color",
           content: metadata.themeColor,
         },
+        // Open Graph / Facebook
         {
-          property: `og:title`,
+          property: "og:site_name",
           content: metadata.title,
         },
         {
-          property: `og:description`,
-          content: metadata.description,
+          property: "og:title",
+          content: `${title} • ${metadata.title}`,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: "og:description",
+          content: metaDescription,
         },
         {
-          property: `og:url`,
-          content: metadata.homepage,
+          property: "og:type",
+          content: "website",
         },
         {
-          property: `og:image`,
-          content: metadata.image,
+          property: "og:url",
+          content: canonicalUrl,
         },
         {
-          property: `og:image:width`,
-          content: "320",
+          property: "og:image",
+          content: metaImage,
         },
         {
-          property: `og:image:height`,
-          content: "320",
+          property: "og:image:width",
+          content: "1200",
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: "og:image:height",
+          content: "630",
         },
         {
-          name: `twitter:site`,
-          content: metadata.homepage,
+          property: "og:image:alt",
+          content: `${metadata.title} - Software Engineer Portfolio`,
         },
         {
-          name: `twitter:title`,
+          property: "og:locale",
+          content: "en_US",
+        },
+        // Twitter Card
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:site",
+          content: metadata.twitterHandle || "",
+        },
+        {
+          name: "twitter:creator",
+          content: metadata.twitterHandle || "",
+        },
+        {
+          name: "twitter:title",
+          content: `${title} • ${metadata.title}`,
+        },
+        {
+          name: "twitter:description",
+          content: metaDescription,
+        },
+        {
+          name: "twitter:image",
+          content: metaImage,
+        },
+        {
+          name: "twitter:image:alt",
+          content: `${metadata.title} - Software Engineer Portfolio`,
+        },
+        // LinkedIn specific
+        {
+          property: "linkedin:owner",
           content: metadata.title,
         },
+        // Verification
         {
-          name: `twitter:description`,
-          content: metadata.description,
-        },
-        {
-          name: `twitter:image`,
-          content: metadata.image,
-        },
-        {
-          name: `google-site-verification`,
+          name: "google-site-verification",
           content: metadata.verification.google,
         },
         {
-          name: `google-adsense-account`,
-          content: `ca-pub-9099543298236984`,
+          name: "google-adsense-account",
+          content: "ca-pub-9099543298236984",
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "canonical",
+          href: canonicalUrl,
+        },
+      ]}
     />
   );
 };

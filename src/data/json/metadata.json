@@ -1,10 +1,11 @@
 {
   "title": "Ghazanfar Shahbaz",
-  "description": "Ghazanfar Shahbaz's personal portfolio website",
-  "keywords": "Ghazanfar Shahbaz Ghaz, JavaScript, TypeScript, React, Fullstack JavaScript, Node, Flutter, Dart, Vue, MongoDB, MEAN stack, MERN stack, GatsbyJS, NextJS, Bilen Adam, Astroloci",
+  "description": "Software Engineer specializing in full-stack development, machine learning, and building innovative products. View my projects, experience, and skills.",
+  "keywords": "Ghazanfar Shahbaz, Software Engineer, Full Stack Developer, React, TypeScript, Python, Machine Learning, AWS, Portfolio",
   "homepage": "https://ghaz.dev",
   "themeColor": "#21252b",
-  "image": "https://turali.js.org/images/logo512.png",
+  "image": "https://ghaz.dev/images/og-image.png",
+  "twitterHandle": "@GhazShahbaz",
   "verification": {
     "google": "yoA6kTc96mzuKG5z93MpyxJbTBmCeHRsP64QEEGuI28"
   }

@@ -30,6 +30,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 import portfolioData from "../../data/json/portfolio.json";
 import SEO from "../../components/SEO";
+import { TechBadge } from "../../components/TechBadge";
 
 interface ExperienceItem {
   id: string;
@@ -277,18 +278,7 @@ const ExperienceCard: React.FC<{
           {exp.technologies && exp.technologies.length > 0 && (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mt: 1.5 }}>
               {exp.technologies.map((tech) => (
-                <Chip
-                  key={tech}
-                  label={tech}
-                  size="small"
-                  variant="outlined"
-                  sx={{
-                    fontSize: "0.7rem",
-                    height: 22,
-                    borderColor: accentColor + "40",
-                    color: theme.palette.text.secondary,
-                  }}
-                />
+                <TechBadge key={tech} tech={tech} isDark={isDark} />
               ))}
             </Box>
           )}
