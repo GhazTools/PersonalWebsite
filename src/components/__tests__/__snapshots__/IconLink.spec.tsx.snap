@@ -6,23 +6,23 @@ exports[`<IconLink /> > should render correctly 1`] = `
     href="/"
     style="text-decoration: none;"
   >
-    <button
+    <div
       aria-label="Home"
-      class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1k3nwvt-MuiButtonBase-root-MuiIconButton-root"
+      class="MuiBox-root css-rafxk6"
+      data-mui-internal-clone-element="true"
       tabindex="0"
-      title="Home"
-      type="button"
     >
       <span
-        class="MuiBadge-root css-96foe1-MuiBadge-root"
+        class="MuiBadge-root css-4lcqot-MuiBadge-root"
       >
         <svg
           aria-hidden="true"
-          class="svg-inline--fa fa-house fa-sm "
+          class="svg-inline--fa fa-house "
           data-icon="house"
           data-prefix="fas"
           focusable="false"
           role="img"
+          style="font-size: 16px;"
           viewBox="0 0 576 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -35,7 +35,7 @@ exports[`<IconLink /> > should render correctly 1`] = `
           class="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorError css-nsw3vh-MuiBadge-badge"
         />
       </span>
-    </button>
+    </div>
   </a>
 </DocumentFragment>
 `;
