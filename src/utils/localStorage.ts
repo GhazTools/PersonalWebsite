@@ -1,4 +1,4 @@
-import { LocalCache } from '../models';
+import { LocalCache } from "../models";
 
 /**
  * Builds a record object by attaching necessary field(s)

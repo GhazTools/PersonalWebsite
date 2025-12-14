@@ -1,8 +1,8 @@
 /**
  * NavBar component styles.
  */
-import { Styles } from 'react-jss';
-import Color from 'color';
+import { Styles } from "react-jss";
+import Color from "color";
 import {
   bgMidBlue,
   bgDarkBlue,
@@ -12,7 +12,7 @@ import {
   breakpoints,
   sansFont,
   heights,
-} from '../../../../../theme';
+} from "../../../../../theme";
 
 export default {
   root: {
@@ -21,25 +21,25 @@ export default {
   },
   list: {
     color: textLightBlue,
-    listStyle: 'none',
-    margin: '0',
-    padding: '0',
+    listStyle: "none",
+    margin: "0",
+    padding: "0",
   },
   listItem: {
-    display: 'inline-block',
-    '& a': {
+    display: "inline-block",
+    "& a": {
       borderRight: `1px solid ${Color(bgMidBlue).darken(0.05).string()}`,
       borderTop: `4px solid ${bgDarkBlue}`,
-      cursor: 'pointer',
-      display: 'inline-block',
+      cursor: "pointer",
+      display: "inline-block",
       fontSize: sSize,
-      letterSpacing: '0.5px',
-      padding: '10px 15px',
-      textTransform: 'lowercase',
-      transition: 'background, border-color 250ms ease',
+      letterSpacing: "0.5px",
+      padding: "10px 15px",
+      textTransform: "lowercase",
+      transition: "background, border-color 250ms ease",
       [`@media screen and (max-width: ${breakpoints.desktop})`]: {
-        letterSpacing: '0',
-        padding: '10px',
+        letterSpacing: "0",
+        padding: "10px",
       },
       '&:hover, &[aria-current="page"]': {
         borderTopColor: bgDarkBlue,

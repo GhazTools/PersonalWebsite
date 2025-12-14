@@ -1,13 +1,13 @@
 /**
  * Section component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import { DiplomaTypes } from '../../../../../../models';
-import { calculateSectionProgress } from '../../../../../../utils';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { DiplomaTypes } from "../../../../../../models";
+import { calculateSectionProgress } from "../../../../../../utils";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 

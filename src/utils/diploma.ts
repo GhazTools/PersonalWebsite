@@ -1,4 +1,4 @@
-import { DiplomaTypes } from '../models';
+import { DiplomaTypes } from "../models";
 
 const progressAverage = (nums: number[], precision: number) => {
   const total = nums.reduce((prev, current) => prev + current, 0);

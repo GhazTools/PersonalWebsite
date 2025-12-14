@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { LocalCache } from '../models';
-import { buildRecordObject } from '../utils';
+import { useState, useEffect } from "react";
+import { LocalCache } from "../models";
+import { buildRecordObject } from "../utils";
 
 /**
  * Custom hook that uses local storage

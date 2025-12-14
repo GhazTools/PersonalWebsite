@@ -36,5 +36,5 @@ library.add(
   faCog,
   faQuestionCircle,
   faFile,
-  faBlog
+  faBlog,
 );

@@ -1,12 +1,12 @@
 /**
  * LeftBar component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import IconLink from '../../../../components/IconLink';
-import { ContactItem } from '../../../../models';
-import { pages } from './../../../../data';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import IconLink from "../../../../components/IconLink";
+import { ContactItem } from "../../../../models";
+import { pages } from "./../../../../data";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -28,9 +28,9 @@ const LeftBar: React.FC<LeftBarProps> = ({ contactData }) => {
 
   const bottom: ContactItem[] = [
     {
-      name: 'Useless button!',
-      url: '',
-      icon: 'cog',
+      name: "Useless button!",
+      url: "",
+      icon: "cog",
       isInternal: true,
     },
   ];

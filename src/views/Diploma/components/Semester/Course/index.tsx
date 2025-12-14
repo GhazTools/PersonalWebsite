@@ -1,14 +1,14 @@
 /**
  * Course component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
-import ProgressBar from '../../../../../components/ProgressBar';
-import { DetailsPanel, DiplomaTypes } from '../../../../../models';
-import { calculateCourseProgress } from '../../../../../utils';
-import Section from './Section';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import clsx from "clsx";
+import ProgressBar from "../../../../../components/ProgressBar";
+import { DetailsPanel, DiplomaTypes } from "../../../../../models";
+import { calculateCourseProgress } from "../../../../../utils";
+import Section from "./Section";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -22,8 +22,9 @@ const Course: React.FC<CourseProps> = ({ courseData, showDetails = false }) => {
 
   const courseProgress = calculateCourseProgress(courseData);
   let courseProgressText = `${courseProgress}% done`;
-  isOptional &&
-    (courseProgressText = `Optional Content: ${courseProgressText}`);
+  if (isOptional) {
+    courseProgressText = `Optional Content: ${courseProgressText}`;
+  }
 
   return (
     <details

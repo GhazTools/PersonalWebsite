@@ -1,16 +1,16 @@
 /**
  * Header component styles.
  */
-import { Styles } from 'react-jss';
-import { bgDarkBlue, heights } from '../../../../theme';
+import { Styles } from "react-jss";
+import { bgDarkBlue, heights } from "../../../../theme";
 
 export default {
   root: {
     background: bgDarkBlue,
-    position: 'sticky',
+    position: "sticky",
     top: 0,
     left: 0,
-    width: '100%',
+    width: "100%",
     height: heights.navBar,
   },
 } as Styles;

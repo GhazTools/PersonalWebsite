@@ -1,4 +1,4 @@
-import hello from '../data/json/hello.json';
+import hello from "../data/json/hello.json";
 
 /**
  * Says Hello in a random language.

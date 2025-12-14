@@ -1,38 +1,38 @@
 /**
  * Book component styles.
  */
-import { Styles } from 'react-jss';
-import { bgLightBlue, green } from '../../../../../../theme';
+import { Styles } from "react-jss";
+import { bgLightBlue, green } from "../../../../../../theme";
 
 export default {
   toolTip: {
-    boxShadow: '0 0 32px black',
+    boxShadow: "0 0 32px black",
     padding: 0,
-    '& img': {
-      maxHeight: '180px',
+    "& img": {
+      maxHeight: "180px",
     },
   },
   bookItem: {
-    display: 'flex',
-    alignItems: 'center',
-    marginTop: '6px',
-    marginBottom: '6px',
+    display: "flex",
+    alignItems: "center",
+    marginTop: "6px",
+    marginBottom: "6px",
   },
   progress: {
-    marginRight: '8px',
-    width: '20px',
-    '@global': {
-      '.CircularProgressbar-path': {
+    marginRight: "8px",
+    width: "20px",
+    "@global": {
+      ".CircularProgressbar-path": {
         stroke: green,
-        strokeLinecap: 'butt',
+        strokeLinecap: "butt",
       },
-      '.CircularProgressbar-trail': {
+      ".CircularProgressbar-trail": {
         stroke: bgLightBlue,
       },
-      '.CircularProgressbar-text': {
+      ".CircularProgressbar-text": {
         // fill: 'yellow',
       },
-      '.CircularProgressbar-background': {
+      ".CircularProgressbar-background": {
         // fill: 'green',
       },
     },

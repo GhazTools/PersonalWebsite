@@ -1,11 +1,11 @@
 /**
  * Generic GHButton component.
  */
-import React, { useState, useEffect } from 'react';
-import { useLocalStorageState } from '../../hooks';
-import ButtonLink, { ButtonLinkProps } from '../ButtonLink';
-import { LocalCache } from '../../models';
-import { buildRecordObject, isRecordUsable } from '../../utils';
+import React, { useState, useEffect } from "react";
+import { useLocalStorageState } from "../../hooks";
+import ButtonLink, { ButtonLinkProps } from "../ButtonLink";
+import { LocalCache } from "../../models";
+import { buildRecordObject, isRecordUsable } from "../../utils";
 
 export interface GHButtonProps extends ButtonLinkProps {
   resource: {

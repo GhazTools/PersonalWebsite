@@ -1,9 +1,9 @@
 /**
  * ProgressBar component.
  */
-import React from 'react';
-import Color from 'color';
-import { bgMidBlue, green } from '../../theme';
+import React from "react";
+import Color from "color";
+import { bgMidBlue, green } from "../../theme";
 
 export interface ProgressBarProps {
   value: number;
@@ -24,14 +24,14 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
     width,
     height,
     backgroundColor: bgColor,
-    marginTop: '3px',
+    marginTop: "3px",
   };
 
   const fillerStyles = {
-    height: '100%',
+    height: "100%",
     width: `${value}%`,
     backgroundColor: color,
-    transition: 'width 500ms ease',
+    transition: "width 500ms ease",
   };
 
   return (

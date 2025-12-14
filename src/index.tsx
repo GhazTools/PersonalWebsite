@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'normalize.css';
-import './theme/icons';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import dotenv from 'dotenv';
-dotenv.config();
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import "normalize.css";
+import "./theme/icons";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
+root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

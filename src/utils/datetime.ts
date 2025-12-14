@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 /**
  * Formats date string.
@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
  * @param formatStr Format string. Defaults to DD/MM/YYYY.
  * @returns Formatted date
  */
-export const formatDate = (isoDate: string, formatStr = 'DD/MM/YYYY') => {
+export const formatDate = (isoDate: string, formatStr = "DD/MM/YYYY") => {
   return dayjs(isoDate).format(formatStr);
 };
 

@@ -1,14 +1,14 @@
 /**
  * MainButtons component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import ButtonLink from '../../../../components/ButtonLink';
-import GHButton, { GHButtonProps } from '../../../../components/GHButton';
-import { ContactItem } from '../../../../models';
-import { getGHCredentials } from '../../../../utils';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import ButtonLink from "../../../../components/ButtonLink";
+import GHButton, { GHButtonProps } from "../../../../components/GHButton";
+import { ContactItem } from "../../../../models";
+import { getGHCredentials } from "../../../../utils";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -27,35 +27,31 @@ const MainButtons: React.FC<MainButtonsProps> = ({ contactData, repoUrl }) => {
     {
       resource: {
         endpoint: `https://api.github.com/users/${username}`,
-        attr: 'followers',
+        attr: "followers",
       },
       href: `https://github.com/${username}`,
       title: `Follow @${username} on GitHub`,
-      icon: ['fab', 'github'],
-      size: 'lg',
+      icon: ["fab", "github"],
+      size: "lg",
       text: `Follow @${username}`,
     },
     // Stargazers button
     {
       resource: {
         endpoint: `https://api.github.com/repos/${username}/${repo}`,
-        attr: 'stargazers_count',
+        attr: "stargazers_count",
       },
       href: repoUrl,
       title: `Star ${username}/${repo} on GitHub`,
-      icon: 'star',
-      size: 'sm',
-      text: 'Star',
+      icon: "star",
+      size: "sm",
+      text: "Star",
     },
   ];
 
   const mainContact = contactData.find((c) => c.isMain) as ContactItem;
 
-  return (
-
-    <div className={classes.root}>
-    </div>
-  );
+  return <div className={classes.root}></div>;
 };
 
 export default MainButtons;

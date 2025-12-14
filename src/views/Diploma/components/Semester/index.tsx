@@ -1,16 +1,16 @@
 /**
  * Semester component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { DetailsPanel, DiplomaTypes } from '../../../../models';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import { DetailsPanel, DiplomaTypes } from "../../../../models";
 import {
   calculateSemesterProgress,
   formatDate,
   isOverDue,
-} from '../../../../utils';
-import Course from './Course';
-import styles from './styles';
+} from "../../../../utils";
+import Course from "./Course";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -34,7 +34,7 @@ const Semester: React.FC<SemesterProps> = ({
   const semDuration =
     start && end
       ? `${formatDate(start)} - ${formatDate(end)}`
-      : 'Dates not set';
+      : "Dates not set";
   const semProgress = calculateSemesterProgress(semesterData);
   const overDue = isOverDue(end, semProgress);
 

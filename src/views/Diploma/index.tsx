@@ -1,14 +1,14 @@
 /**
  * Diploma component.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReactTooltip from 'react-tooltip';
-import Container from '../../components/Container';
-import Semester from './components/Semester';
-import { DiplomaTypes } from '../../models';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Tooltip } from "react-tooltip";
+import Container from "../../components/Container";
+import Semester from "./components/Semester";
+import { DiplomaTypes } from "../../models";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -26,8 +26,9 @@ const Diploma: React.FC<DiplomaProps> = ({ diplomaData }) => {
   return (
     <Container seo={{ title: subtitle ? `${title}, ${subtitle}` : title }}>
       <div
-        data-tip={info || title}
-        data-class={classes.tip}
+        data-tooltip-id="diploma-tooltip"
+        data-tooltip-content={info || title}
+        data-tooltip-class-name={classes.tip}
         className={classes.title}
       >
         <h2>{title}</h2>
@@ -39,7 +40,7 @@ const Diploma: React.FC<DiplomaProps> = ({ diplomaData }) => {
           <Semester semesterData={s} key={s.name} />
         ))}
       </div>
-      <ReactTooltip />
+      <Tooltip id="diploma-tooltip" />
     </Container>
   );
 };

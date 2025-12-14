@@ -1,11 +1,11 @@
 /**
  * ButtonLink component.
  */
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
-import { createUseStyles } from 'react-jss';
-import styles from './styles';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp, SizeProp } from "@fortawesome/fontawesome-svg-core";
+import { createUseStyles } from "react-jss";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -40,7 +40,7 @@ const ButtonLink: React.FC<ButtonLinkProps> = ({
       rel="noopener noreferrer"
     >
       <span className={classes.contents}>
-        <FontAwesomeIcon className="icon" icon={icon} size={size || 'lg'} />
+        <FontAwesomeIcon className="icon" icon={icon} size={size || "lg"} />
         <span className={classes.text}>{text}</span>
         {!!showCount && <span className={classes.count}>{count}</span>}
       </span>

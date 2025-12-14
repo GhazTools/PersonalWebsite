@@ -1,6 +1,6 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import metadata from '../../data/json/metadata.json';
+import React from "react";
+import { Helmet } from "react-helmet-async";
+import metadata from "../../data/json/metadata.json";
 
 export interface SEOProps {
   title: string;
@@ -12,7 +12,7 @@ export interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title,
   description,
-  lang = 'en',
+  lang = "en",
   meta = [],
 }) => {
   const metaDescription = description || metadata.description;
@@ -26,19 +26,19 @@ const SEO: React.FC<SEOProps> = ({
       titleTemplate={`%s • ${metadata.title}`}
       meta={[
         {
-          name: 'description',
+          name: "description",
           content: metaDescription,
         },
         {
-          name: 'keywords',
+          name: "keywords",
           content: metadata.keywords,
         },
         {
-          name: 'canonical',
+          name: "canonical",
           content: metadata.homepage,
         },
         {
-          name: 'theme-color',
+          name: "theme-color",
           content: metadata.themeColor,
         },
         {
@@ -63,11 +63,11 @@ const SEO: React.FC<SEOProps> = ({
         },
         {
           property: `og:image:width`,
-          content: '320',
+          content: "320",
         },
         {
           property: `og:image:height`,
-          content: '320',
+          content: "320",
         },
         {
           name: `twitter:card`,

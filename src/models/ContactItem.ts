@@ -1,4 +1,4 @@
-import { Linkable } from './Linkable';
+import { Linkable } from "./Linkable";
 
 export interface ContactItem extends Linkable {
   name: string;

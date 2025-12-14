@@ -1,11 +1,11 @@
 /**
  * MDTab component.
  */
-import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import Container from '../Container';
-import { createUseStyles } from 'react-jss';
-import styles from './styles';
+import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import Container from "../Container";
+import { createUseStyles } from "react-jss";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -14,7 +14,7 @@ export interface MDTabProps {
 }
 
 const MDTab: React.FC<MDTabProps> = ({ fileName }) => {
-  const [contents, setContents] = useState<string>('');
+  const [contents, setContents] = useState<string>("");
 
   const classes = useStyles();
 
@@ -30,7 +30,7 @@ const MDTab: React.FC<MDTabProps> = ({ fileName }) => {
 
   return (
     <Container seo={{ title: fileName }}>
-      <ReactMarkdown className={classes.mdpage} source={contents} />
+      <ReactMarkdown className={classes.mdpage}>{contents}</ReactMarkdown>
     </Container>
   );
 };

@@ -1,15 +1,16 @@
 /**
  * Container components used in tabs.
  */
-import React from 'react';
-import { createUseStyles } from 'react-jss';
-import SEO, { SEOProps } from '../SEO';
-import styles from './styles';
+import React from "react";
+import { createUseStyles } from "react-jss";
+import SEO, { SEOProps } from "../SEO";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
 export interface ContainerProps {
   seo?: SEOProps;
+  children?: React.ReactNode;
 }
 
 const Container: React.FC<ContainerProps> = ({ seo, children }) => {

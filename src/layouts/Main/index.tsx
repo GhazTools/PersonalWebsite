@@ -1,15 +1,15 @@
 /**
  * Main layout.
  */
-import React, { useState } from 'react';
-import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
-import Header from './components/Header';
-import LeftBar from './components/LeftBar';
-import Explorer from './components/Explorer';
-import StatusBar from './components/StatusBar';
-import { ContactItem, TabLink } from '../../models';
-import styles from './styles';
+import React, { useState } from "react";
+import { createUseStyles } from "react-jss";
+import clsx from "clsx";
+import Header from "./components/Header";
+import LeftBar from "./components/LeftBar";
+import Explorer from "./components/Explorer";
+import StatusBar from "./components/StatusBar";
+import { ContactItem, TabLink } from "../../models";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -21,7 +21,10 @@ export interface ContactProps {
   contactData: ContactItem[];
 }
 
-export type MainLayoutProps = TabProps & ContactProps;
+export type MainLayoutProps = TabProps &
+  ContactProps & {
+    children?: React.ReactNode;
+  };
 
 const MainLayout: React.FC<MainLayoutProps> = ({
   children,

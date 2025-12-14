@@ -1,14 +1,14 @@
 /**
  * Greeter component.
  */
-import React, { useEffect } from 'react';
-import Typed from 'typed.js';
-import { createUseStyles } from 'react-jss';
-import MainButtons, { MainButtonsProps } from './components/MainButtons';
-import SEO from '../../components/SEO';
-import { Static } from '../../models';
-import { randomHello } from '../../utils';
-import styles from './styles';
+import React, { useEffect } from "react";
+import Typed from "typed.js";
+import { createUseStyles } from "react-jss";
+import MainButtons, { MainButtonsProps } from "./components/MainButtons";
+import SEO from "../../components/SEO";
+import { Static } from "../../models";
+import { randomHello } from "../../utils";
+import styles from "./styles";
 
 const useStyles = createUseStyles(styles);
 
@@ -32,7 +32,7 @@ const Greeter: React.FC<GreeterProps> = ({
       smartBackspace: true,
     };
 
-    const typed = new Typed('#typed-insert-point', options);
+    const typed = new Typed("#typed-insert-point", options);
 
     return () => {
       // Make sure to destroy Typed instance on unmounting
@@ -49,7 +49,7 @@ const Greeter: React.FC<GreeterProps> = ({
       <section className={classes.root}>
         <h1 className={classes.heading}>{staticData.mainLine}</h1>
         <div className={classes.typedWrap}>
-          <span id="typed-insert-point" style={{ whiteSpace: 'pre' }} />
+          <span id="typed-insert-point" style={{ whiteSpace: "pre" }} />
         </div>
         <MainButtons contactData={contactData} repoUrl={repoUrl} />
       </section>
