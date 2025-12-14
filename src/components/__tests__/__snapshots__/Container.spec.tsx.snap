@@ -3,14 +3,10 @@
 exports[`<Container /> > should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="root-0-2-1"
+    class="MuiBox-root css-1mlmn3y"
   >
-    <div
-      class="content-0-2-2"
-    >
-      <div>
-        Test Content
-      </div>
+    <div>
+      Test Content
     </div>
   </div>
 </DocumentFragment>
