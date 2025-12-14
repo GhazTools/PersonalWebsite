@@ -4,7 +4,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography, Button, Container, useTheme } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SEO from "../../components/SEO";
 
@@ -24,7 +24,9 @@ const availablePages = [
 const NotFoundView: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
   const isDark = theme.palette.mode === "dark";
+  const requestedPath = location.pathname;
   const inputRef = useRef<HTMLInputElement>(null);
   const [userInput, setUserInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -32,10 +34,10 @@ const NotFoundView: React.FC = () => {
   const [terminalHistory, setTerminalHistory] = useState<
     Array<{ type: "input" | "output" | "error"; text: string }>
   >([
-    { type: "input", text: "cd /requested-page" },
+    { type: "input", text: `cd ${requestedPath}` },
     {
       type: "error",
-      text: "bash: cd: /requested-page: No such file or directory",
+      text: `bash: cd: ${requestedPath}: No such file or directory`,
     },
     { type: "input", text: "ls available-pages/" },
     { type: "output", text: availablePages.map((p) => p.name).join("  ") },
