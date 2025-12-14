@@ -13,7 +13,11 @@ const AchievementsView: React.FC = () => {
 
   return (
     <>
-      <SEO title="Awards & Achievements" />
+      <SEO
+        title="Awards & Achievements"
+        description="Professional awards, certifications, hackathon wins, and notable achievements."
+        pathname="/achievements"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

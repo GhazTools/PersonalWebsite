@@ -9,7 +9,11 @@ import SEO from "../../components/SEO";
 const GitHubActivityView: React.FC = () => {
   return (
     <>
-      <SEO title="GitHub Activity" />
+      <SEO
+        title="GitHub Activity"
+        description="Recent GitHub contributions, repositories, and open source activity."
+        pathname="/github"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

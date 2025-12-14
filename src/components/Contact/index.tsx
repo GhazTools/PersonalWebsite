@@ -14,10 +14,17 @@ import {
   useTheme,
   Snackbar,
   Alert,
+  IconButton,
+  Tooltip,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import SendIcon from "@mui/icons-material/Send";
 import EmailIcon from "@mui/icons-material/Email";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import CheckIcon from "@mui/icons-material/Check";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 interface ContactProps {
   email?: string;
@@ -35,6 +42,7 @@ const Contact: React.FC<ContactProps> = ({
 }) => {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
+  const [copied, setCopied] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -129,6 +137,39 @@ const Contact: React.FC<ContactProps> = ({
     });
   };
 
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/GhazanfarShahbaz",
+      icon: LinkedInIcon,
+      color: "#0077b5",
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/GhazanfarShahbaz",
+      icon: GitHubIcon,
+      color: isDark ? "#f0f6fc" : "#24292f",
+    },
+  ];
+
   const textFieldSx = {
     "& .MuiOutlinedInput-root": {
       backgroundColor: isDark
@@ -209,11 +250,126 @@ const Contact: React.FC<ContactProps> = ({
                 color: theme.palette.text.secondary,
                 maxWidth: 500,
                 mx: "auto",
+                mb: 3,
               }}
             >
               Have a project in mind or want to discuss opportunities? I&apos;d
               love to hear from you!
             </Typography>
+
+            {/* Quick Contact Options */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 2,
+                flexWrap: "wrap",
+                mb: 2,
+              }}
+            >
+              {/* Email with copy button */}
+              <Tooltip title={copied ? "Copied!" : "Copy email"} arrow>
+                <Box
+                  onClick={handleCopyEmail}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 2,
+                    py: 1,
+                    borderRadius: 2,
+                    cursor: "pointer",
+                    backgroundColor: isDark
+                      ? "rgba(255, 255, 255, 0.05)"
+                      : "rgba(0, 0, 0, 0.04)",
+                    border: `1px solid ${isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)"}`,
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      backgroundColor: isDark
+                        ? "rgba(102, 162, 251, 0.1)"
+                        : "rgba(102, 162, 251, 0.08)",
+                      borderColor: theme.palette.primary.main,
+                    },
+                  }}
+                >
+                  <EmailIcon
+                    sx={{ fontSize: 18, color: theme.palette.primary.main }}
+                  />
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontFamily: "monospace",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {email}
+                  </Typography>
+                  {copied ? (
+                    <CheckIcon sx={{ fontSize: 16, color: "#98c379" }} />
+                  ) : (
+                    <ContentCopyIcon
+                      sx={{
+                        fontSize: 14,
+                        color: theme.palette.text.secondary,
+                      }}
+                    />
+                  )}
+                </Box>
+              </Tooltip>
+
+              {/* Social Links */}
+              {socialLinks.map((social) => (
+                <Tooltip key={social.name} title={social.name} arrow>
+                  <IconButton
+                    component="a"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      backgroundColor: isDark
+                        ? "rgba(255, 255, 255, 0.05)"
+                        : "rgba(0, 0, 0, 0.04)",
+                      border: `1px solid ${isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)"}`,
+                      color: social.color,
+                      transition: "all 0.2s ease",
+                      "&:hover": {
+                        backgroundColor: `${social.color}20`,
+                        borderColor: social.color,
+                        transform: "translateY(-2px)",
+                      },
+                    }}
+                  >
+                    <social.icon />
+                  </IconButton>
+                </Tooltip>
+              ))}
+
+              {/* Calendar Link (optional - for scheduling) */}
+              <Tooltip title="Schedule a meeting" arrow>
+                <IconButton
+                  component="a"
+                  href="https://calendly.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    backgroundColor: isDark
+                      ? "rgba(255, 255, 255, 0.05)"
+                      : "rgba(0, 0, 0, 0.04)",
+                    border: `1px solid ${isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)"}`,
+                    color: "#e5c07b",
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      backgroundColor: "rgba(229, 192, 123, 0.1)",
+                      borderColor: "#e5c07b",
+                      transform: "translateY(-2px)",
+                    },
+                  }}
+                >
+                  <CalendarMonthIcon />
+                </IconButton>
+              </Tooltip>
+            </Box>
           </Box>
 
           {/* Contact Form Card */}

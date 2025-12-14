@@ -19,7 +19,10 @@ const StatusBar: React.FC<StatusBarProps> = ({ onOpenCommandPalette }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 60000);
+    // Update immediately to ensure accurate time on mount
+    setTime(new Date());
+    // Update every second for accurate minute transitions
+    const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 

@@ -81,7 +81,11 @@ const SkillsView: React.FC = () => {
 
   return (
     <>
-      <SEO title="Skills" />
+      <SEO
+        title="Skills"
+        description="Technical skills including programming languages, frameworks, tools, and technologies."
+        pathname="/skills"
+      />
       <Box sx={{ py: 6, minHeight: "100vh" }}>
         <Container maxWidth="lg">
           {/* Header */}

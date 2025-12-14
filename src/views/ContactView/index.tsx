@@ -9,7 +9,11 @@ import SEO from "../../components/SEO";
 const ContactView: React.FC = () => {
   return (
     <>
-      <SEO title="Contact" />
+      <SEO
+        title="Contact"
+        description="Get in touch for collaboration opportunities, job inquiries, or just to say hello."
+        pathname="/contact"
+      />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

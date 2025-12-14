@@ -315,7 +315,11 @@ const ProjectsView: React.FC = () => {
 
   return (
     <>
-      <SEO title="Projects" />
+      <SEO
+        title="Projects"
+        description="Featured software projects, open source contributions, and personal coding experiments."
+        pathname="/projects"
+      />
       <Box sx={{ py: 6, minHeight: "100vh" }}>
         <Container maxWidth="lg">
           {/* Header */}

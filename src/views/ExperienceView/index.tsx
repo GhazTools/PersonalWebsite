@@ -378,7 +378,11 @@ const ExperienceView: React.FC = () => {
 
   return (
     <>
-      <SEO title="Experience" />
+      <SEO
+        title="Experience"
+        description="Professional experience including full-time roles, internships, and research positions at top tech companies."
+        pathname="/resume"
+      />
       <Box sx={{ py: 6, minHeight: "100vh" }}>
         <Container maxWidth="lg">
           {/* Header */}

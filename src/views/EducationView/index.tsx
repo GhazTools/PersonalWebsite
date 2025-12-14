@@ -35,7 +35,11 @@ const EducationView: React.FC = () => {
 
   return (
     <>
-      <SEO title="Education" />
+      <SEO
+        title="Education"
+        description="Academic background, degrees, coursework, and educational achievements."
+        pathname="/education"
+      />
       <Box sx={{ py: 6, minHeight: "100vh" }}>
         <Container maxWidth="lg">
           {/* Header */}
