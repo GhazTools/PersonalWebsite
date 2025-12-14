@@ -2,13 +2,11 @@
  * StatusBar component - Modernized with MUI
  */
 import React from "react";
-import { Box, Link, IconButton, Tooltip, useTheme } from "@mui/material";
+import { Box, Link, useTheme } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useThemeMode } from "../../../../contexts/ThemeContext";
 
 const StatusBar: React.FC = () => {
   const theme = useTheme();
-  const { mode, toggleTheme } = useThemeMode();
 
   return (
     <Box
@@ -60,26 +58,6 @@ const StatusBar: React.FC = () => {
           gap: 1,
         }}
       >
-        <Tooltip title={`Switch to ${mode === "dark" ? "light" : "dark"} mode`}>
-          <IconButton
-            onClick={toggleTheme}
-            size="small"
-            sx={{
-              padding: 0.5,
-              color: theme.palette.text.secondary,
-              transition: "all 0.2s",
-              "&:hover": {
-                color: theme.palette.primary.main,
-                backgroundColor: "transparent",
-              },
-            }}
-          >
-            <FontAwesomeIcon
-              icon={mode === "dark" ? "sun" : "moon"}
-              size="sm"
-            />
-          </IconButton>
-        </Tooltip>
         <FontAwesomeIcon icon="smile" size="sm" />
       </Box>
     </Box>

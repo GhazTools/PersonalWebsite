@@ -20,9 +20,15 @@ const Header: React.FC<HeaderProps> = ({ tabs, onMobileMenuToggle }) => {
       component="header"
       sx={{
         height: 40,
-        backgroundColor: "rgba(33, 37, 43, 0.95)",
+        backgroundColor:
+          theme.palette.mode === "dark"
+            ? "rgba(33, 37, 43, 0.95)"
+            : "rgba(255, 255, 255, 0.95)",
         backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
+        borderBottom:
+          theme.palette.mode === "dark"
+            ? "1px solid rgba(255, 255, 255, 0.05)"
+            : "1px solid rgba(0, 0, 0, 0.08)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -38,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ tabs, onMobileMenuToggle }) => {
         <IconButton
           onClick={onMobileMenuToggle}
           sx={{
-            color: "#abb2bf",
+            color: theme.palette.text.secondary,
             "&:hover": {
               color: theme.palette.primary.main,
             },

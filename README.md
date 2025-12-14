@@ -25,5 +25,4 @@ It is based on the open‑source [`vscode‑portfolio`](https://github.com/Ghaza
    ```bash
    git clone https://github.com/GhazTools/PersonalWebsite.git
    cd PersonalWebsite
-   git checkout adsense  # optional: work on the AdSense branch
    ```
