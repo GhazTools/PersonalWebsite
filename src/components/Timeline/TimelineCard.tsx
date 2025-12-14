@@ -142,9 +142,9 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
               position: "absolute",
               inset: -1,
               borderRadius: 2,
-              border: `2px solid ${theme.palette.primary.main}`,
+              border: `2px solid ${typeColor}`,
               pointerEvents: "none",
-              boxShadow: `0 0 15px ${theme.palette.primary.main}40`,
+              boxShadow: `0 0 15px ${typeColor}40`,
             }}
           />
         )}

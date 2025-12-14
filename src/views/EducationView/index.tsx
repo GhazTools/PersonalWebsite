@@ -100,7 +100,7 @@ const EducationView: React.FC = () => {
                     left: 0,
                     right: 0,
                     height: 4,
-                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, #42a5f5, #98c379)`,
+                    backgroundColor: theme.palette.primary.main,
                   }}
                 />
 

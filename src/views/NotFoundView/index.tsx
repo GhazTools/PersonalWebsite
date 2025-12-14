@@ -63,10 +63,7 @@ const NotFoundView: React.FC = () => {
                 fontSize: { xs: "6rem", md: "10rem" },
                 fontWeight: 900,
                 fontFamily: "monospace",
-                background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, #c678dd 50%, #e06c75 100%)`,
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: theme.palette.primary.main,
                 lineHeight: 1,
                 mb: 2,
               }}
