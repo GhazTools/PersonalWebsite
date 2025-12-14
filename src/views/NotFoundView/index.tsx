@@ -1,37 +1,147 @@
 /**
- * 404 Not Found Page - VS Code themed
+ * 404 Not Found Page - VS Code themed with interactive terminal
  */
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Box, Typography, Button, Container, useTheme } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SEO from "../../components/SEO";
+
+// Available pages for navigation
+const availablePages = [
+  { path: "/", name: "home", description: "Go to homepage" },
+  { path: "/resume", name: "resume", description: "View my experience" },
+  { path: "/projects", name: "projects", description: "Browse my projects" },
+  { path: "/skills", name: "skills", description: "See my tech stack" },
+  { path: "/github", name: "github", description: "GitHub activity" },
+  { path: "/education", name: "education", description: "My education" },
+  { path: "/timeline", name: "timeline", description: "Career timeline" },
+  { path: "/achievements", name: "achievements", description: "Achievements" },
+  { path: "/contact", name: "contact", description: "Get in touch" },
+];
 
 const NotFoundView: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const isDark = theme.palette.mode === "dark";
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [userInput, setUserInput] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestion, setSelectedSuggestion] = useState(0);
+  const [terminalHistory, setTerminalHistory] = useState<
+    Array<{ type: "input" | "output" | "error"; text: string }>
+  >([
+    { type: "input", text: "cd /requested-page" },
+    {
+      type: "error",
+      text: "bash: cd: /requested-page: No such file or directory",
+    },
+    { type: "input", text: "ls available-pages/" },
+    { type: "output", text: availablePages.map((p) => p.name).join("  ") },
+  ]);
 
-  const terminalLines = [
-    { prompt: "$ ", command: "cd /requested-page", delay: 0 },
-    {
-      prompt: "",
-      command: "bash: cd: /requested-page: No such file or directory",
-      delay: 0.3,
-      isError: true,
-    },
-    { prompt: "$ ", command: "ls -la", delay: 0.6 },
-    { prompt: "", command: "total 404", delay: 0.9 },
-    {
-      prompt: "",
-      command: "drwxr-xr-x  2 ghaz  staff  404 Dec 14 00:00 .",
-      delay: 1.0,
-    },
-    { prompt: "$ ", command: "echo $?", delay: 1.3 },
-    { prompt: "", command: "404", delay: 1.5, isError: true },
-    { prompt: "$ ", command: "# Maybe try going home?", delay: 1.8 },
-  ];
+  // Filter suggestions based on input
+  const suggestions = userInput
+    ? availablePages.filter(
+        (p) =>
+          p.name.toLowerCase().includes(userInput.toLowerCase()) ||
+          p.path.toLowerCase().includes(userInput.toLowerCase()),
+      )
+    : [];
+
+  // Handle keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Tab" && suggestions.length > 0) {
+      e.preventDefault();
+      // Autocomplete with selected suggestion
+      setUserInput(suggestions[selectedSuggestion].name);
+      setShowSuggestions(false);
+    } else if (e.key === "ArrowDown" && showSuggestions) {
+      e.preventDefault();
+      setSelectedSuggestion((prev) =>
+        Math.min(prev + 1, suggestions.length - 1),
+      );
+    } else if (e.key === "ArrowUp" && showSuggestions) {
+      e.preventDefault();
+      setSelectedSuggestion((prev) => Math.max(prev - 1, 0));
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    } else if (e.key === "Escape") {
+      setShowSuggestions(false);
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = () => {
+    if (!userInput.trim()) return;
+
+    const input = userInput.trim().toLowerCase();
+    const matchedPage = availablePages.find(
+      (p) =>
+        p.name.toLowerCase() === input || p.path.toLowerCase() === `/${input}`,
+    );
+
+    if (matchedPage) {
+      // Add success message and navigate
+      setTerminalHistory((prev) => [
+        ...prev,
+        { type: "input", text: `cd ${matchedPage.path}` },
+        { type: "output", text: `Navigating to ${matchedPage.name}...` },
+      ]);
+      setTimeout(() => navigate(matchedPage.path), 500);
+    } else {
+      // Show error with suggestions
+      const closestMatch = availablePages.find((p) =>
+        p.name.toLowerCase().startsWith(input.charAt(0)),
+      );
+      setTerminalHistory((prev) => [
+        ...prev,
+        { type: "input", text: `cd /${input}` },
+        {
+          type: "error",
+          text: `bash: cd: /${input}: No such file or directory`,
+        },
+        {
+          type: "output",
+          text: closestMatch
+            ? `Did you mean: ${closestMatch.name}?`
+            : "Try: home, resume, projects, skills, github, education, timeline",
+        },
+      ]);
+      setUserInput("");
+    }
+  };
+
+  // Update suggestions visibility
+  useEffect(() => {
+    setShowSuggestions(userInput.length > 0 && suggestions.length > 0);
+    setSelectedSuggestion(0);
+  }, [userInput, suggestions.length]);
+
+  // Focus input on mount
+  useEffect(() => {
+    const timer = setTimeout(() => inputRef.current?.focus(), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Terminal colors that work in both themes
+  const terminalBg = isDark
+    ? "rgba(33, 37, 43, 0.95)"
+    : "rgba(250, 250, 250, 0.98)";
+  const terminalHeaderBg = isDark
+    ? "rgba(0, 0, 0, 0.3)"
+    : "rgba(0, 0, 0, 0.06)";
+  const terminalBorder = isDark
+    ? "rgba(255, 255, 255, 0.1)"
+    : "rgba(0, 0, 0, 0.1)";
+  const textColor = isDark ? "#abb2bf" : "#383a42";
+  const errorColor = isDark ? "#e06c75" : "#e45649";
+  const promptColor = theme.palette.primary.main;
+  const suggestionBg = isDark
+    ? "rgba(86, 156, 214, 0.15)"
+    : "rgba(86, 156, 214, 0.12)";
 
   return (
     <>
@@ -72,23 +182,22 @@ const NotFoundView: React.FC = () => {
             </Typography>
           </motion.div>
 
-          {/* Terminal-style error message */}
+          {/* Interactive Terminal */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            style={{ width: "100%", maxWidth: 550 }}
           >
             <Box
               sx={{
-                width: "100%",
-                maxWidth: 500,
-                background: isDark
-                  ? "rgba(33, 37, 43, 0.95)"
-                  : "rgba(40, 44, 52, 0.95)",
+                background: terminalBg,
                 borderRadius: 2,
                 overflow: "hidden",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+                border: `1px solid ${terminalBorder}`,
+                boxShadow: isDark
+                  ? "0 8px 32px rgba(0, 0, 0, 0.3)"
+                  : "0 4px 20px rgba(0, 0, 0, 0.1)",
                 mb: 4,
               }}
             >
@@ -100,8 +209,8 @@ const NotFoundView: React.FC = () => {
                   gap: 1,
                   px: 2,
                   py: 1,
-                  backgroundColor: "rgba(0, 0, 0, 0.3)",
-                  borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                  backgroundColor: terminalHeaderBg,
+                  borderBottom: `1px solid ${terminalBorder}`,
                 }}
               >
                 <Box
@@ -132,7 +241,9 @@ const NotFoundView: React.FC = () => {
                   variant="caption"
                   sx={{
                     ml: 2,
-                    color: "rgba(255, 255, 255, 0.5)",
+                    color: isDark
+                      ? "rgba(255, 255, 255, 0.5)"
+                      : "rgba(0, 0, 0, 0.5)",
                     fontFamily: "monospace",
                   }}
                 >
@@ -141,59 +252,172 @@ const NotFoundView: React.FC = () => {
               </Box>
 
               {/* Terminal content */}
-              <Box sx={{ p: 2, fontFamily: "monospace", textAlign: "left" }}>
-                {terminalLines.map((line, index) => (
+              <Box
+                sx={{
+                  p: 2,
+                  fontFamily: "monospace",
+                  textAlign: "left",
+                  maxHeight: 280,
+                  overflowY: "auto",
+                }}
+              >
+                {/* History */}
+                {terminalHistory.map((line, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: line.delay }}
+                    transition={{ duration: 0.2 }}
                   >
                     <Typography
                       variant="body2"
                       sx={{
                         fontFamily: "monospace",
-                        color: line.isError ? "#e06c75" : "#abb2bf",
+                        color: line.type === "error" ? errorColor : textColor,
                         mb: 0.5,
                         fontSize: "0.85rem",
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
                       }}
                     >
-                      <span style={{ color: "#98c379" }}>{line.prompt}</span>
-                      {line.command}
+                      {line.type === "input" && (
+                        <span style={{ color: promptColor, fontWeight: 600 }}>
+                          ${" "}
+                        </span>
+                      )}
+                      {line.text}
                     </Typography>
                   </motion.div>
                 ))}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                  }}
-                >
-                  <Typography
-                    component="span"
-                    sx={{
-                      fontFamily: "monospace",
-                      color: "#98c379",
-                      fontSize: "0.85rem",
-                    }}
-                  >
-                    ${" "}
-                    <Box
+
+                {/* Interactive input line */}
+                <Box sx={{ position: "relative", mt: 1 }}>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Typography
                       component="span"
                       sx={{
-                        backgroundColor: "#abb2bf",
-                        width: 8,
-                        height: 16,
-                        display: "inline-block",
-                        ml: 0.5,
+                        fontFamily: "monospace",
+                        color: promptColor,
+                        fontSize: "0.85rem",
+                        fontWeight: 600,
+                      }}
+                    >
+                      ${" "}
+                    </Typography>
+                    <Typography
+                      component="span"
+                      sx={{
+                        fontFamily: "monospace",
+                        color: textColor,
+                        fontSize: "0.85rem",
+                        mr: 0.5,
+                      }}
+                    >
+                      cd /
+                    </Typography>
+                    <Box
+                      component="input"
+                      ref={inputRef}
+                      type="text"
+                      value={userInput}
+                      onChange={(e) => setUserInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="type a page name..."
+                      autoComplete="off"
+                      spellCheck={false}
+                      sx={{
+                        flex: 1,
+                        background: "transparent",
+                        border: "none",
+                        outline: "none",
+                        fontFamily: "monospace",
+                        fontSize: "0.85rem",
+                        color: textColor,
+                        caretColor: promptColor,
+                        "&::placeholder": {
+                          color: isDark
+                            ? "rgba(255,255,255,0.3)"
+                            : "rgba(0,0,0,0.3)",
+                        },
                       }}
                     />
-                  </Typography>
-                </motion.div>
+                  </Box>
+
+                  {/* Autocomplete suggestions */}
+                  <AnimatePresence>
+                    {showSuggestions && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 0.15 }}
+                      >
+                        <Box
+                          sx={{
+                            mt: 1,
+                            p: 1,
+                            borderRadius: 1,
+                            backgroundColor: isDark
+                              ? "rgba(40, 44, 52, 0.95)"
+                              : "rgba(255, 255, 255, 0.95)",
+                            border: `1px solid ${terminalBorder}`,
+                          }}
+                        >
+                          <Typography
+                            variant="caption"
+                            sx={{
+                              color: isDark ? "#9599a0" : "#86868b",
+                              fontSize: "0.7rem",
+                              display: "block",
+                              mb: 0.5,
+                            }}
+                          >
+                            Tab to autocomplete • Enter to navigate
+                          </Typography>
+                          {suggestions.slice(0, 5).map((suggestion, index) => (
+                            <Box
+                              key={suggestion.path}
+                              onClick={() => {
+                                setUserInput(suggestion.name);
+                                setShowSuggestions(false);
+                                inputRef.current?.focus();
+                              }}
+                              sx={{
+                                px: 1,
+                                py: 0.5,
+                                borderRadius: 0.5,
+                                cursor: "pointer",
+                                backgroundColor:
+                                  index === selectedSuggestion
+                                    ? suggestionBg
+                                    : "transparent",
+                                "&:hover": {
+                                  backgroundColor: suggestionBg,
+                                },
+                              }}
+                            >
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  fontFamily: "monospace",
+                                  fontSize: "0.8rem",
+                                  color: textColor,
+                                }}
+                              >
+                                <span style={{ color: promptColor }}>
+                                  {suggestion.name}
+                                </span>
+                                <span style={{ opacity: 0.5, marginLeft: 8 }}>
+                                  {suggestion.description}
+                                </span>
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Box>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </Box>
               </Box>
             </Box>
           </motion.div>
@@ -222,8 +446,7 @@ const NotFoundView: React.FC = () => {
                 maxWidth: 400,
               }}
             >
-              The page you&apos;re looking for doesn&apos;t exist or has been
-              moved. Let&apos;s get you back on track.
+              Type a page name in the terminal above, or use the buttons below.
             </Typography>
           </motion.div>
 
