@@ -56,14 +56,14 @@ const LeftBar: React.FC<LeftBarProps> = ({ contactData }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 0.5,
+          gap: 1.5,
         }}
       >
         {renderData(internals)}
         <Divider
           sx={{
             width: "60%",
-            my: 0.5,
+            my: 1,
             borderColor: "rgba(255, 255, 255, 0.1)",
           }}
         />

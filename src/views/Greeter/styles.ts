@@ -49,6 +49,10 @@ export default {
     "& a": {
       textDecoration: "none",
       borderBottom: `1px dashed ${textDark}`,
+      color: midBlue,
+      "&:hover": {
+        color: "#66b3ff",
+      },
     },
     "& strong": {
       fontWeight: "500",
