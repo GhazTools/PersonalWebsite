@@ -56,8 +56,10 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
     const lastCard = cardRefs.current[cardRefs.current.length - 1];
     if (lastCard) {
       const lastRect = lastCard.getBoundingClientRect();
-      // End the squiggly line at the bottom of the last card (not extending past)
-      const totalH = lastRect.bottom - containerRect.top + 20;
+      // End the squiggly line at the CENTER of the last card (where the last dot is)
+      // This prevents the line from extending past the last dot
+      const lastDotY = lastRect.top - containerRect.top + lastRect.height / 2;
+      const totalH = lastDotY + 40; // Small buffer past the last dot
 
       // Only update state if values actually changed
       if (

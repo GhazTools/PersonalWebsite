@@ -167,7 +167,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           zIndex: theme.zIndex.appBar,
         }}
       >
-        <StatusBar />
+        <StatusBar onOpenCommandPalette={() => setCommandPaletteOpen(true)} />
       </Box>
 
       {/* Command Palette (⌘K) */}

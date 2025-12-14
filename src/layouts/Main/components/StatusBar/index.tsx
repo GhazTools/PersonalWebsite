@@ -9,7 +9,11 @@ import { motion } from "framer-motion";
 // Last updated date - update this when making significant changes
 const LAST_UPDATED = "December 2025";
 
-const StatusBar: React.FC = () => {
+interface StatusBarProps {
+  onOpenCommandPalette?: () => void;
+}
+
+const StatusBar: React.FC<StatusBarProps> = ({ onOpenCommandPalette }) => {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
   const [time, setTime] = useState(new Date());
@@ -140,8 +144,12 @@ const StatusBar: React.FC = () => {
 
       {/* Right section */}
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-        <Tooltip title="Quick navigation" arrow>
+        <Tooltip
+          title="Quick navigation - Press ⌘K to search and navigate"
+          arrow
+        >
           <Box
+            onClick={onOpenCommandPalette}
             sx={{
               display: { xs: "none", sm: "flex" },
               alignItems: "center",
@@ -151,10 +159,20 @@ const StatusBar: React.FC = () => {
               borderRadius: 0.5,
               cursor: "pointer",
               transition: "all 0.2s",
+              border: "1px solid",
+              borderColor: isDark
+                ? "rgba(102, 162, 251, 0.3)"
+                : "rgba(102, 162, 251, 0.4)",
+              backgroundColor: isDark
+                ? "rgba(102, 162, 251, 0.1)"
+                : "rgba(102, 162, 251, 0.08)",
               "&:hover": {
                 backgroundColor: isDark
-                  ? "rgba(255, 255, 255, 0.05)"
-                  : "rgba(0, 0, 0, 0.04)",
+                  ? "rgba(102, 162, 251, 0.2)"
+                  : "rgba(102, 162, 251, 0.15)",
+                borderColor: isDark
+                  ? "rgba(102, 162, 251, 0.5)"
+                  : "rgba(102, 162, 251, 0.6)",
               },
             }}
           >

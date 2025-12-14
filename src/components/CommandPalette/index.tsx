@@ -35,6 +35,20 @@ interface CommandPaletteProps {
   onClose: () => void;
 }
 
+/**
+ * Extract a clean display name from a tab filename
+ * Handles: resume.md -> resume, .educationrc -> education, skills.js -> skills
+ */
+const getDisplayName = (filename: string): string => {
+  // Remove leading dot for dotfiles
+  let name = filename.startsWith(".") ? filename.slice(1) : filename;
+  // Remove file extension
+  name = name.replace(/\.[^/.]+$/, "");
+  // Remove common suffixes like 'rc'
+  name = name.replace(/rc$/, "");
+  return name || filename; // Fallback to original if empty
+};
+
 const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
@@ -59,7 +73,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
       // Tabs
       ...tabs.map((tab) => ({
         id: tab.url,
-        name: tab.name.replace(/\.[^/.]+$/, ""), // Remove file extension for display
+        name: getDisplayName(tab.name),
         category: "Sections",
         url: tab.url,
         icon: tab.icon as IconProp,
