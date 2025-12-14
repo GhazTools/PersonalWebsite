@@ -20,6 +20,7 @@ import {
   faSun,
   faMoon,
   faBars,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -43,4 +44,5 @@ library.add(
   faSun,
   faMoon,
   faBars,
+  faClock,
 );

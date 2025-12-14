@@ -1,5 +1,6 @@
 import React from "react";
 import Greeter from "../views/Greeter";
+import TimelineView from "../views/TimelineView";
 import { PageLink, TabLink } from "../models";
 import { jsOrange, midBlue, green, pink } from "../theme/colors";
 
@@ -20,6 +21,13 @@ export const pages: PageLink[] = [
         repoUrl={pkg.repository.url}
       />
     ),
+  },
+  {
+    name: "Timeline",
+    url: "/timeline",
+    icon: "clock",
+    isInternal: true,
+    comp: () => <TimelineView />,
   },
 ];
 

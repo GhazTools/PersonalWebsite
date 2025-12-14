@@ -1,0 +1,142 @@
+{
+  "title": "My Journey",
+  "subtitle": "A path through education, work, and growth",
+  "events": [
+    {
+      "id": "hunter-start",
+      "startDate": "2019-08",
+      "endDate": "2023-06",
+      "title": "Hunter College",
+      "role": "Bachelor of Arts, Computer Science",
+      "description": "Graduated Summa Cum Laude with Phi Beta Kappa honors. Thomas Hunter Honors Program and Cooperman Fellow. Relevant coursework: Data Structures, Algorithms, Machine Learning, NLP, Computer Vision.",
+      "type": "education",
+      "isCurrent": false
+    },
+    {
+      "id": "uhg-summer-2020",
+      "startDate": "2020-06",
+      "endDate": "2020-08",
+      "title": "UnitedHealth Group",
+      "role": "Software Engineer Intern",
+      "description": "Cleaned and arranged 100,000+ data entries using SQL. Designed UI for cost breakdowns of 1M+ assets using Angular and D3. Automated data processing with Pandas.",
+      "type": "work",
+      "isCurrent": false
+    },
+    {
+      "id": "uta-cs",
+      "startDate": "2020-09",
+      "endDate": "2023-05",
+      "title": "Hunter College",
+      "role": "Undergraduate Teaching Assistant",
+      "description": "TA for Introduction to Computer Science, Data Structures and Algorithms, and Natural Language Processing courses across multiple semesters.",
+      "type": "education",
+      "isCurrent": false
+    },
+    {
+      "id": "uhg-fall-2020",
+      "startDate": "2020-09",
+      "endDate": "2020-12",
+      "title": "UnitedHealth Group",
+      "role": "Software Engineer Intern",
+      "description": "Transformed SQL search queries to Elasticsearch improving runtime by 200%. Replaced Orient backend with Spring Boot.",
+      "type": "work",
+      "isCurrent": false
+    },
+    {
+      "id": "gdsc",
+      "startDate": "2020-08",
+      "endDate": "2023-08",
+      "title": "Google Developer Student Club",
+      "role": "Core Tech Lead → DSC Lead → Advisor",
+      "description": "Taught Google technologies and frameworks to students. Managed club finances and organized technology workshops.",
+      "type": "leadership",
+      "isCurrent": false
+    },
+    {
+      "id": "bloomberg-intern-1",
+      "startDate": "2021-06",
+      "endDate": "2021-08",
+      "title": "Bloomberg",
+      "role": "Software Engineer Intern",
+      "description": "Built relational database with SQLAlchemy, developed automated tests with pytest, constructed backend service, and led frontend application development.",
+      "type": "work",
+      "isCurrent": false
+    },
+    {
+      "id": "ml-research-1",
+      "startDate": "2021-09",
+      "endDate": "2022-05",
+      "title": "Hunter College - Lab of Susan L. Epstein",
+      "role": "Undergraduate ML Research Assistant",
+      "description": "Implemented Watershed-based algorithm for indoor navigation, calculated map complexity using graph theory, and automated map extraction using OpenCV.",
+      "type": "research",
+      "isCurrent": false
+    },
+    {
+      "id": "bloomberg-intern-2",
+      "startDate": "2022-06",
+      "endDate": "2022-08",
+      "title": "Bloomberg",
+      "role": "Software Engineer Intern",
+      "description": "Developed user settings tracking system with SQL backend. Created endpoints for saving and retrieving user selections.",
+      "type": "work",
+      "isCurrent": false
+    },
+    {
+      "id": "amazon-intern",
+      "startDate": "2022-08",
+      "endDate": "2022-11",
+      "title": "Amazon",
+      "role": "Software Development Engineer Intern",
+      "description": "Built feature statistics logging system using AWS CloudWatch, Apache Spark, and OpenTelemetry. Created backend service for task delegation.",
+      "type": "work",
+      "isCurrent": false
+    },
+    {
+      "id": "ml-research-2",
+      "startDate": "2022-08",
+      "endDate": "2023-08",
+      "title": "Hunter College - Lab of Susan L. Epstein",
+      "role": "Undergraduate ML Research Assistant",
+      "description": "Developed Farmbot automation systems using weather data, engineered water pressure calculation with Arduino, automated plant data storage with SQLAlchemy and Flask.",
+      "type": "research",
+      "isCurrent": false
+    },
+    {
+      "id": "nlp-research-undergrad",
+      "startDate": "2023-01",
+      "endDate": "2023-08",
+      "title": "Hunter College - Lab of Sarah Ita Levitan",
+      "role": "Undergraduate NLP Research Assistant",
+      "description": "Conducted research on Natural Language Processing applications and methodologies.",
+      "type": "research",
+      "isCurrent": false
+    },
+    {
+      "id": "bloomberg-full-time",
+      "startDate": "2023-06",
+      "endDate": null,
+      "title": "Bloomberg",
+      "role": "Software Engineer",
+      "description": "Full-time Software Engineer working on financial technology solutions and large-scale distributed systems.",
+      "type": "work",
+      "isCurrent": true
+    },
+    {
+      "id": "nlp-research-current",
+      "startDate": "2024-07",
+      "endDate": null,
+      "title": "Hunter College - Lab of Sarah Ita Levitan",
+      "role": "NLP Research Assistant",
+      "description": "Continuing research focusing on NLP applications and research methodologies.",
+      "type": "research",
+      "isCurrent": true
+    }
+  ],
+  "typeColors": {
+    "education": "#66a2fb",
+    "work": "#4ade80",
+    "research": "#a78bfa",
+    "leadership": "#f97316"
+  }
+}

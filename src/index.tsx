@@ -7,6 +7,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createCustomTheme } from "./theme/muiTheme";
 import { ThemeProvider, useThemeMode } from "./contexts/ThemeContext";
 import "normalize.css";
+import "./styles/scrollbar.css";
 import "./theme/icons";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -17,6 +18,11 @@ const root = createRoot(container!);
 const AppWithTheme = () => {
   const { mode } = useThemeMode();
   const theme = React.useMemo(() => createCustomTheme(mode), [mode]);
+
+  // Update data-theme attribute for scrollbar styling
+  React.useEffect(() => {
+    document.documentElement.setAttribute("data-theme", mode);
+  }, [mode]);
 
   return (
     <MuiThemeProvider theme={theme}>

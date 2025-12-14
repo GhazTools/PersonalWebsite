@@ -135,7 +135,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             flexGrow: 1,
             p: { xs: 2, md: 3 },
             pt: { xs: 2, md: 2 },
-            pb: 10,
+            pb: 25, // Even more padding to allow full scroll
           }}
         >
           {children}
