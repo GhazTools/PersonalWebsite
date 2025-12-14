@@ -297,27 +297,27 @@ const EventItem: React.FC<{ event: GitHubEvent }> = ({ event }) => {
         return `Pushed ${commits} commit${commits !== 1 ? "s" : ""} to ${repoName}`;
       }
       case "PullRequestEvent": {
+        const actionStr = event.payload.action || "updated";
         const action =
-          event.payload.action === "opened"
+          actionStr === "opened"
             ? "Opened"
-            : event.payload.action === "closed"
+            : actionStr === "closed"
               ? "Closed"
-              : event.payload.action === "merged"
+              : actionStr === "merged"
                 ? "Merged"
-                : event.payload.action?.charAt(0).toUpperCase() +
-                  event.payload.action?.slice(1);
+                : actionStr.charAt(0).toUpperCase() + actionStr.slice(1);
         return `${action} PR in ${repoName}`;
       }
       case "CreateEvent":
         return `Created ${event.payload.ref_type}${event.payload.ref ? ` "${event.payload.ref}"` : ""} in ${repoName}`;
       case "IssuesEvent": {
+        const actionStr = event.payload.action || "updated";
         const action =
-          event.payload.action === "opened"
+          actionStr === "opened"
             ? "Opened"
-            : event.payload.action === "closed"
+            : actionStr === "closed"
               ? "Closed"
-              : event.payload.action?.charAt(0).toUpperCase() +
-                event.payload.action?.slice(1);
+              : actionStr.charAt(0).toUpperCase() + actionStr.slice(1);
         return `${action} issue in ${repoName}`;
       }
       case "WatchEvent":
