@@ -1,63 +1,73 @@
 import React from "react";
-import Greeter from "../views/Greeter";
 import TimelineView from "../views/TimelineView";
+import ContactView from "../views/ContactView";
+import GitHubActivityView from "../views/GitHubActivityView";
+import AchievementsView from "../views/AchievementsView";
+import SkillsView from "../views/SkillsView";
+import EducationView from "../views/EducationView";
+import ProjectsView from "../views/ProjectsView";
+import ExperienceView from "../views/ExperienceView";
 import { PageLink, TabLink } from "../models";
 import { jsOrange, midBlue, green, pink } from "../theme/colors";
 
-import staticData from "./json/static.json";
-import contactData from "./json/contact.json";
-import pkg from "../../package.json";
-
 export const pages: PageLink[] = [
   {
-    name: "Home",
-    url: "/",
-    icon: "home",
+    name: "Achievements",
+    url: "/achievements",
+    icon: "trophy",
     isInternal: true,
-    comp: () => (
-      <Greeter
-        staticData={staticData}
-        contactData={contactData}
-        repoUrl={pkg.repository.url}
-      />
-    ),
+    comp: () => <AchievementsView />,
   },
   {
-    name: "Timeline",
-    url: "/timeline",
-    icon: "clock",
+    name: "Contact",
+    url: "/contact",
+    icon: "envelope",
     isInternal: true,
-    comp: () => <TimelineView />,
+    comp: () => <ContactView />,
   },
 ];
 
 export const tabs: TabLink[] = [
   {
-    name: "skills.js",
-    url: "/skills",
-    icon: ["fab", "js"],
-    color: jsOrange,
-    mdFileName: "skills",
-  },
-  {
-    name: ".educationrc",
-    url: "/education",
-    icon: "university",
-    color: midBlue,
-    mdFileName: "education",
+    name: "resume.md",
+    url: "/resume",
+    icon: "file",
+    color: pink,
+    comp: () => <ExperienceView />,
   },
   {
     name: "projects.config",
     url: "/projects",
     icon: "sliders-h",
     color: green,
-    mdFileName: "projects",
+    comp: () => <ProjectsView />,
   },
   {
-    name: "resume.md",
-    url: "/resume",
-    icon: "file",
-    color: pink,
-    mdFileName: "resume",
+    name: "skills.js",
+    url: "/skills",
+    icon: ["fab", "js"],
+    color: jsOrange,
+    comp: () => <SkillsView />,
+  },
+  {
+    name: "github.io",
+    url: "/github",
+    icon: ["fab", "github"],
+    color: "#e5c07b",
+    comp: () => <GitHubActivityView />,
+  },
+  {
+    name: ".educationrc",
+    url: "/education",
+    icon: "university",
+    color: midBlue,
+    comp: () => <EducationView />,
+  },
+  {
+    name: "timeline.time",
+    url: "/timeline",
+    icon: "clock",
+    color: "#61afef",
+    comp: () => <TimelineView />,
   },
 ];

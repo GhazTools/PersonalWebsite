@@ -50,7 +50,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}
           sx={{
-            width: 48,
+            width: 56,
             flexShrink: 0,
             position: "fixed",
             left: 0,
@@ -93,7 +93,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           "& .MuiDrawer-paper": {
             width: 240,
             boxSizing: "border-box",
-            left: 48,
+            left: 56,
             backgroundColor: "rgba(33, 37, 43, 0.95)",
             backdropFilter: "blur(10px)",
             borderRight: "1px solid rgba(255, 255, 255, 0.1)",
@@ -108,7 +108,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         component="main"
         sx={{
           flexGrow: 1,
-          marginLeft: { xs: 0, md: "48px" },
+          marginLeft: { xs: 0, md: "56px" },
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
@@ -118,7 +118,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           }),
           ...(explorerOpen &&
             !isMobile && {
-              marginLeft: "288px",
+              marginLeft: "296px",
             }),
         }}
       >

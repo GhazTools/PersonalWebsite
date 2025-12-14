@@ -1,0 +1,54 @@
+{
+  "title": "Awards & Achievements",
+  "subtitle": "Recognition and milestones throughout my journey",
+  "achievements": [
+    {
+      "id": "ach-1",
+      "title": "Dean's List",
+      "organization": "Hunter College, CUNY",
+      "date": "2019-2023",
+      "description": "Maintained academic excellence across all semesters, recognizing consistent high performance in computer science coursework.",
+      "type": "honor"
+    },
+    {
+      "id": "ach-2",
+      "title": "Undergraduate Research Fellowship",
+      "organization": "Hunter College",
+      "date": "2021",
+      "description": "Awarded competitive fellowship for research in computational biology and machine learning applications in protein structure prediction.",
+      "type": "scholarship"
+    },
+    {
+      "id": "ach-3",
+      "title": "Computer Science Club President",
+      "organization": "Hunter College CS Club",
+      "date": "2022-2023",
+      "description": "Led the computer science club, organizing hackathons, tech talks, and coding workshops for 200+ members.",
+      "type": "honor"
+    },
+    {
+      "id": "ach-4",
+      "title": "Bloomberg Engineering Intern",
+      "organization": "Bloomberg LP",
+      "date": "2022",
+      "description": "Selected for competitive summer internship program at a leading financial technology company.",
+      "type": "award"
+    },
+    {
+      "id": "ach-5",
+      "title": "Technology Development Program",
+      "organization": "UnitedHealth Group",
+      "date": "2023",
+      "description": "Accepted into the prestigious Technology Development Program, a rotational program for top engineering talent.",
+      "type": "award"
+    },
+    {
+      "id": "ach-6",
+      "title": "Amazon SDE Offer",
+      "organization": "Amazon",
+      "date": "2024",
+      "description": "Received and accepted offer as Software Development Engineer at Amazon, working on AWS services.",
+      "type": "award"
+    }
+  ]
+}

@@ -1,87 +1,87 @@
 /**
- * NavItem component - Sleek macOS-inspired design
+ * NavItem component - Modern pill-style tab
  */
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { Box, IconButton, useTheme } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { Box, useTheme } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TabSpec, TabLink } from "../../../../../../models";
+import { motion } from "framer-motion";
 
 const NavItem: React.FC<TabSpec & TabLink> = ({
   name,
   url,
   mdFileName, // eslint-disable-line @typescript-eslint/no-unused-vars
+  comp, // eslint-disable-line @typescript-eslint/no-unused-vars
+  color,
   ...iconProps
 }) => {
   const theme = useTheme();
-  const navigate = useNavigate();
-
-  const onCloseClicked = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigate("/");
-  };
+  const isDark = theme.palette.mode === "dark";
 
   return (
     <NavLink to={url} style={{ textDecoration: "none" }}>
       {({ isActive }) => (
         <Box
+          component={motion.div}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
           sx={{
             display: "flex",
             alignItems: "center",
-            gap: 1,
+            gap: 0.75,
             px: 1.5,
-            py: 0.75,
+            py: 0.5,
+            borderRadius: 1.5,
             position: "relative",
             color: isActive
-              ? theme.palette.primary.main
+              ? isDark
+                ? "#fff"
+                : theme.palette.text.primary
               : theme.palette.text.secondary,
-            transition: "color 0.2s ease-in-out",
+            backgroundColor: isActive
+              ? isDark
+                ? "rgba(102, 162, 251, 0.15)"
+                : "rgba(255, 255, 255, 0.9)"
+              : "transparent",
+            boxShadow: isActive
+              ? isDark
+                ? "0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)"
+                : "0 1px 3px rgba(0, 0, 0, 0.1)"
+              : "none",
+            transition: "all 0.2s ease",
             cursor: "pointer",
-            fontSize: "0.875rem",
-            fontWeight: 500,
-            height: "100%",
+            fontSize: "0.8rem",
+            fontWeight: isActive ? 600 : 500,
+            whiteSpace: "nowrap",
             "&:hover": {
-              color: theme.palette.primary.main,
-              "& .closeButton": {
-                opacity: 1,
-              },
-            },
-            "&::after": {
-              content: '""',
-              position: "absolute",
-              bottom: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: isActive ? "80%" : "0%",
-              height: "2px",
-              backgroundColor: theme.palette.primary.main,
-              transition: "width 0.3s ease-in-out",
-            },
-            "&:hover::after": {
-              width: "80%",
+              color: isDark ? "#fff" : theme.palette.text.primary,
+              backgroundColor: isActive
+                ? isDark
+                  ? "rgba(102, 162, 251, 0.2)"
+                  : "rgba(255, 255, 255, 1)"
+                : isDark
+                  ? "rgba(255, 255, 255, 0.05)"
+                  : "rgba(0, 0, 0, 0.03)",
             },
           }}
         >
-          <FontAwesomeIcon {...iconProps} size="sm" />
-          <Box component="span">{name}</Box>
-          <IconButton
-            onClick={onCloseClicked}
-            className="closeButton"
-            size="small"
+          <FontAwesomeIcon
+            {...iconProps}
+            size="xs"
+            style={{
+              color: isActive ? color : "inherit",
+              transition: "color 0.2s ease",
+            }}
+          />
+          <Box
+            component="span"
             sx={{
-              p: 0.25,
-              opacity: 0,
-              transition: "opacity 0.2s",
-              color: "inherit",
-              ml: 0.5,
-              "&:hover": {
-                backgroundColor: "rgba(102, 162, 251, 0.2)",
-              },
+              display: { xs: "none", sm: "inline" },
             }}
           >
-            <FontAwesomeIcon icon="times" size="xs" />
-          </IconButton>
+            {name}
+          </Box>
         </Box>
       )}
     </NavLink>

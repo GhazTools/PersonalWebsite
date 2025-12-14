@@ -8,6 +8,9 @@ import {
   faSlidersH,
   faUniversity,
   faCodeBranch,
+  faCode,
+  faBolt,
+  faHeart,
   faTimes,
   faSmile,
   faStar,
@@ -21,6 +24,9 @@ import {
   faMoon,
   faBars,
   faClock,
+  faIdCard,
+  faTrophy,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -32,6 +38,9 @@ library.add(
   faSlidersH,
   faUniversity,
   faCodeBranch,
+  faCode,
+  faBolt,
+  faHeart,
   faTimes,
   faSmile,
   faStar,
@@ -45,4 +54,7 @@ library.add(
   faMoon,
   faBars,
   faClock,
+  faIdCard,
+  faTrophy,
+  faEnvelope,
 );

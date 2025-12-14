@@ -36,7 +36,7 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
           new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
         );
       }),
-    [config.events]
+    [config.events],
   );
 
   // Calculate card center positions for dot placement
@@ -185,29 +185,79 @@ const Timeline: React.FC<TimelineProps> = ({ config }) => {
           </Box>
         </Box>
 
-        {/* Footer decoration */}
+        {/* To Be Continued Card */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
         >
           <Box
             sx={{
-              textAlign: "center",
-              mt: 12,
-              pt: 6,
+              display: "flex",
+              justifyContent: "center",
+              mt: 10,
             }}
           >
-            <Typography
-              variant="body2"
+            <Box
               sx={{
-                color: theme.palette.text.secondary,
-                fontStyle: "italic",
+                position: "relative",
+                p: 4,
+                px: 6,
+                borderRadius: 4,
+                background: `linear-gradient(135deg, ${theme.palette.primary.main}15, ${theme.palette.secondary?.main || "#c678dd"}15)`,
+                border: `2px dashed ${theme.palette.primary.main}40`,
+                textAlign: "center",
+                maxWidth: 400,
+                overflow: "hidden",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: -50,
+                  right: -50,
+                  width: 100,
+                  height: 100,
+                  background: `radial-gradient(circle, ${theme.palette.primary.main}20 0%, transparent 70%)`,
+                  borderRadius: "50%",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: -30,
+                  left: -30,
+                  width: 80,
+                  height: 80,
+                  background: `radial-gradient(circle, ${theme.palette.secondary?.main || "#c678dd"}20 0%, transparent 70%)`,
+                  borderRadius: "50%",
+                },
               }}
             >
-              And the journey continues...
-            </Typography>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 700,
+                  background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary?.main || "#c678dd"})`,
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  mb: 1,
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              >
+                To Be Continued...
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: theme.palette.text.secondary,
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              >
+                The next chapter is being written ✨
+              </Typography>
+            </Box>
           </Box>
         </motion.div>
       </Container>

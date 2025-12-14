@@ -1,11 +1,12 @@
 /**
- * IconLink component - Modernized with MUI
+ * IconLink component - Modern dock-style icon with hover effects
  */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { Badge, IconButton, useTheme } from "@mui/material";
+import { Badge, Box, Tooltip, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 import { ContactItem } from "../../models";
 
 const IconLink: React.FC<ContactItem> = ({
@@ -16,37 +17,78 @@ const IconLink: React.FC<ContactItem> = ({
   badge,
 }) => {
   const theme = useTheme();
+  const location = useLocation();
+  const isDark = theme.palette.mode === "dark";
+  const isActive = isInternal && location.pathname === url;
 
   const iconComp = (
-    <IconButton
-      aria-label={isInternal ? name : `Find me on ${name}`}
+    <Tooltip
       title={isInternal ? name : `Find me on ${name}`}
-      sx={{
-        color: "#9599a0",
-        transition: "all 0.2s ease-in-out",
-        padding: "6px",
-        "&:hover": {
-          color: theme.palette.primary.main,
-          backgroundColor: "rgba(102, 162, 251, 0.1)",
-          transform: "translateY(-2px)",
-        },
-      }}
+      placement="right"
+      arrow
     >
-      <Badge
-        badgeContent={badge}
-        color="error"
+      <Box
+        component={motion.div}
+        whileHover={{ scale: 1.15, y: -2 }}
+        whileTap={{ scale: 0.95 }}
         sx={{
-          "& .MuiBadge-badge": {
-            fontSize: "0.6rem",
-            height: "14px",
-            minWidth: "14px",
-            padding: "0 3px",
+          width: 38,
+          height: 38,
+          borderRadius: 2,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: isActive
+            ? isDark
+              ? "rgba(102, 162, 251, 0.15)"
+              : "rgba(102, 162, 251, 0.1)"
+            : "transparent",
+          color: isActive
+            ? theme.palette.primary.main
+            : theme.palette.text.secondary,
+          transition: "all 0.2s ease",
+          cursor: "pointer",
+          position: "relative",
+          "&:hover": {
+            backgroundColor: isDark
+              ? "rgba(102, 162, 251, 0.15)"
+              : "rgba(102, 162, 251, 0.1)",
+            color: theme.palette.primary.main,
+          },
+          // Active indicator dot
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            left: -8,
+            width: 3,
+            height: isActive ? 20 : 0,
+            borderRadius: "0 2px 2px 0",
+            backgroundColor: theme.palette.primary.main,
+            transition: "height 0.2s ease",
+          },
+          "&:hover::after": {
+            height: 8,
           },
         }}
       >
-        <FontAwesomeIcon icon={icon as IconProp} size="sm" />
-      </Badge>
-    </IconButton>
+        <Badge
+          badgeContent={badge}
+          color="error"
+          sx={{
+            "& .MuiBadge-badge": {
+              fontSize: "0.55rem",
+              height: 14,
+              minWidth: 14,
+              padding: "0 3px",
+              top: 2,
+              right: 2,
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={icon as IconProp} style={{ fontSize: 16 }} />
+        </Badge>
+      </Box>
+    </Tooltip>
   );
 
   if (isInternal) {

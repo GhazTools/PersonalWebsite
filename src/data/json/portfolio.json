@@ -1,0 +1,499 @@
+{
+  "profile": {
+    "name": "Ghazanfar Shahbaz",
+    "title": "Software Engineer",
+    "tagline": "Building elegant solutions to complex problems",
+    "email": "ghazanfarshahbaz2409@gmail.com",
+    "location": "New York, NY",
+    "website": "https://ghazanfarshahbaz.me",
+    "linkedin": "https://linkedin.com/in/GhazanfarShahbaz",
+    "github": "https://github.com/GhazanfarShahbaz"
+  },
+  "experience": [
+    {
+      "id": "exp-bloomberg-2",
+      "company": "Bloomberg LP",
+      "role": "Software Engineer",
+      "location": "New York, NY",
+      "startDate": "2023-06",
+      "endDate": null,
+      "description": "Full-time software engineer working on financial data infrastructure.",
+      "highlights": [
+        "Developing and maintaining core financial data systems",
+        "Building scalable backend services for real-time data processing",
+        "Collaborating with cross-functional teams on product features"
+      ],
+      "technologies": ["Python", "C++", "JavaScript", "SQL"],
+      "companyUrl": "https://bloomberg.com"
+    },
+    {
+      "id": "exp-nlp-research-2",
+      "company": "Hunter College, Lab of Sarah Ita Levitan",
+      "role": "Natural Language Processing Research Assistant",
+      "location": "Remote",
+      "startDate": "2024-07",
+      "endDate": null,
+      "description": "Continued NLP research focusing on advanced language models.",
+      "highlights": [
+        "Researching stance detection and text summarization",
+        "Working on medical NLP applications",
+        "Publishing research papers on computational linguistics"
+      ],
+      "technologies": ["Python", "TensorFlow", "PyTorch", "NLP"]
+    },
+    {
+      "id": "exp-nlp-research-1",
+      "company": "Hunter College, Lab of Sarah Ita Levitan",
+      "role": "Undergraduate NLP Research Assistant",
+      "location": "Remote",
+      "startDate": "2023-01",
+      "endDate": "2023-08",
+      "description": "Research in natural language processing and computational linguistics.",
+      "highlights": [
+        "Developed models for text summarization and stance detection",
+        "Worked on medical NLP applications",
+        "Contributed to research publications"
+      ],
+      "technologies": ["Python", "TensorFlow", "NLP", "Machine Learning"]
+    },
+    {
+      "id": "exp-ml-research-2",
+      "company": "Hunter College, Lab of Susan L. Epstein",
+      "role": "Undergraduate ML Research Assistant",
+      "location": "Remote",
+      "startDate": "2022-08",
+      "endDate": "2023-08",
+      "description": "Machine learning research for agricultural automation.",
+      "highlights": [
+        "Devised a system to skip watering plants using weather data in Farmbot",
+        "Automated saving Farmbot plant data to remote server using SQLAlchemy and Flask",
+        "Engineered water pressure calculation system using Arduino"
+      ],
+      "technologies": ["Python", "SQLAlchemy", "Flask", "Arduino", "ML"]
+    },
+    {
+      "id": "exp-amazon",
+      "company": "Amazon",
+      "role": "Software Development Engineer Intern",
+      "location": "New York, NY",
+      "startDate": "2022-08",
+      "endDate": "2022-11",
+      "description": "Developed logging and analytics systems for AWS services.",
+      "highlights": [
+        "Engineered feature statistics logging into AWS CloudWatch using Apache Spark and OpenTelemetry",
+        "Incorporated integration tests using mockito library to verify service logic",
+        "Introduced backend service to delegate tasks based on priority using CloudWatch data"
+      ],
+      "technologies": ["Java", "AWS", "Apache Spark", "OpenTelemetry"],
+      "companyUrl": "https://amazon.com"
+    },
+    {
+      "id": "exp-bloomberg-intern-2",
+      "company": "Bloomberg LP",
+      "role": "Software Engineer Intern",
+      "location": "New York, NY",
+      "startDate": "2022-06",
+      "endDate": "2022-08",
+      "description": "Developed user interface features for application settings.",
+      "highlights": [
+        "Instantiated current selection label tracking user's application settings in popup",
+        "Developed endpoints to save and retrieve users' previous 10 selections using SQL",
+        "Integrated endpoints to display users' recent selections in tabular form"
+      ],
+      "technologies": ["Python", "JavaScript", "SQL", "C++"],
+      "companyUrl": "https://bloomberg.com"
+    },
+    {
+      "id": "exp-ml-research-1",
+      "company": "Hunter College, Lab of Susan L. Epstein",
+      "role": "Undergraduate ML Research Assistant",
+      "location": "Remote",
+      "startDate": "2021-09",
+      "endDate": "2022-05",
+      "description": "Research on indoor navigation using machine learning.",
+      "highlights": [
+        "Implemented Watershed algorithm for navigating indoor spaces by splitting maps into sections",
+        "Calculated complexity of maps using features like neighbor count and area",
+        "Automated information extraction from maps using OpenCV and graph theory"
+      ],
+      "technologies": ["Python", "OpenCV", "Machine Learning", "Graph Theory"]
+    },
+    {
+      "id": "exp-bloomberg-intern-1",
+      "company": "Bloomberg LP",
+      "role": "Software Engineer Intern",
+      "location": "Remote",
+      "startDate": "2021-06",
+      "endDate": "2021-08",
+      "description": "Built full-stack applications for data management.",
+      "highlights": [
+        "Devised relational database using SQLAlchemy to query, create, update, and delete entities",
+        "Developed automated tests using pytest to ensure backend logic correctness",
+        "Spearheaded development of front-end application for data display and transformation"
+      ],
+      "technologies": ["Python", "SQLAlchemy", "pytest", "JavaScript"],
+      "companyUrl": "https://bloomberg.com"
+    },
+    {
+      "id": "exp-uhg-2",
+      "company": "UnitedHealth Group",
+      "role": "Software Engineer Intern",
+      "location": "Remote",
+      "startDate": "2020-09",
+      "endDate": "2020-12",
+      "description": "Backend optimization and system improvements.",
+      "highlights": [
+        "Transformed SQL search query to elastic search, improving runtime by 200%",
+        "Replaced orient backend with Spring Boot for improved efficiency",
+        "Reconstructed Angular framework to use Spring Boot endpoints"
+      ],
+      "technologies": ["Java", "Spring Boot", "Elasticsearch", "Angular"],
+      "companyUrl": "https://www.unitedhealthgroup.com"
+    },
+    {
+      "id": "exp-uhg-1",
+      "company": "UnitedHealth Group",
+      "role": "Software Engineer Intern",
+      "location": "Remote",
+      "startDate": "2020-06",
+      "endDate": "2020-08",
+      "description": "Data engineering and visualization development.",
+      "highlights": [
+        "Arranged and cleaned data of over 100,000 entries using SQL",
+        "Designed UI with cost breakdowns of over 1,000,000 assets using Angular and D3",
+        "Automated data cleaning process using pandas",
+        "Implemented Spring Boot framework for database queries"
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Angular",
+        "D3.js",
+        "Spring Boot",
+        "pandas"
+      ],
+      "companyUrl": "https://www.unitedhealthgroup.com"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-hunter",
+      "institution": "Hunter College, CUNY",
+      "degree": "Bachelor of Arts",
+      "field": "Computer Science",
+      "location": "New York, NY",
+      "startDate": "2019-08",
+      "endDate": "2023-06",
+      "gpa": "Summa Cum Laude",
+      "highlights": [
+        "Phi Beta Kappa",
+        "Thomas Hunters Honors Program",
+        "Cooperman Fellow",
+        "Dean's List",
+        "Peter F. Vallone Scholarship"
+      ],
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Computer Architecture",
+        "Discrete Structures",
+        "Operating Systems",
+        "Machine Learning",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Calculus 3",
+        "Linear Algebra"
+      ],
+      "activities": [
+        "Hunter ACM",
+        "Open Source Club",
+        "Google Developer Student Club"
+      ],
+      "teaching": [
+        "UTA - Introduction to Computer Science (Fall 2020, Fall 2021, Spring 2022, Fall 2022)",
+        "UTA - Data Structures and Algorithms (Fall 2022, Spring 2023)",
+        "UTA - Natural Language Processing (Spring 2023)"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "id": "prog-1",
+      "name": "Facebook Above and Beyond CS",
+      "year": "2021"
+    },
+    {
+      "id": "prog-2",
+      "name": "Codepath Cybersecurity",
+      "year": "2020"
+    },
+    {
+      "id": "prog-3",
+      "name": "Google CSSI",
+      "year": "2019"
+    },
+    {
+      "id": "prog-4",
+      "name": "All Star Code",
+      "year": "2019"
+    }
+  ],
+  "skills": {
+    "technical": [
+      { "name": "iOS Development", "icon": "mobile" },
+      { "name": "Web Development", "icon": "globe" },
+      { "name": "Backend Development", "icon": "server" },
+      { "name": "Git", "icon": "code-branch" },
+      { "name": "Debian/MacOS", "icon": "terminal" }
+    ],
+    "languages": [
+      { "name": "Python", "level": 5, "years": 6, "color": "#3572A5" },
+      {
+        "name": "JavaScript/TypeScript",
+        "level": 5,
+        "years": 5,
+        "color": "#f7df1e"
+      },
+      { "name": "Java", "level": 4, "years": 4, "color": "#b07219" },
+      { "name": "C++", "level": 4, "years": 4, "color": "#f34b7d" },
+      { "name": "Swift", "level": 3, "years": 2, "color": "#F05138" },
+      { "name": "Rust", "level": 2, "years": 1, "color": "#dea584" },
+      { "name": "SQL", "level": 4, "years": 5, "color": "#336791" }
+    ],
+    "frameworks": {
+      "backend": [
+        { "name": "Flask", "level": 5 },
+        { "name": "Django", "level": 4 },
+        { "name": "FastAPI", "level": 4 },
+        { "name": "Sanic", "level": 3 },
+        { "name": "Express", "level": 4 },
+        { "name": "Spring Boot", "level": 3 },
+        { "name": "SQLAlchemy", "level": 5 },
+        { "name": "Alembic", "level": 4 },
+        { "name": "Pybind", "level": 3 }
+      ],
+      "frontend": [
+        { "name": "React", "level": 5 },
+        { "name": "Angular", "level": 3 },
+        { "name": "SwiftUI", "level": 3 }
+      ],
+      "ml": [
+        { "name": "TensorFlow", "level": 4 },
+        { "name": "PyTorch", "level": 3 }
+      ]
+    },
+    "cloud": [
+      { "name": "AWS", "level": 4, "years": 3 },
+      { "name": "Docker", "level": 4, "years": 3 },
+      { "name": "Kubernetes", "level": 3, "years": 1 },
+      { "name": "CI/CD", "level": 4, "years": 4 }
+    ]
+  },
+  "interests": {
+    "research": [
+      "Text Summarization",
+      "Speech Synthesis",
+      "Computational Linguistics",
+      "Machine Translation",
+      "Stance Detection",
+      "Medical Image Analysis",
+      "Medical NLP",
+      "Computational Medicine",
+      "ML in Healthcare"
+    ],
+    "technical": [
+      "Deep Learning",
+      "Natural Language Processing",
+      "iOS Development",
+      "Serverside Development",
+      "Arduino Development"
+    ],
+    "hobbies": [
+      { "name": "Piano", "emoji": "🎹" },
+      { "name": "Tennis", "emoji": "🎾" },
+      { "name": "Coding", "emoji": "💻" },
+      { "name": "Running", "emoji": "🏃‍♂️" },
+      { "name": "Reading", "emoji": "📚" },
+      { "name": "Gaming", "emoji": "🎮" },
+      { "name": "Cooking", "emoji": "🧑‍🍳" },
+      { "name": "Rock Climbing", "emoji": "🧗‍♂️" }
+    ]
+  },
+  "projects": {
+    "featured": [
+      {
+        "id": "proj-eisenhower",
+        "name": "Eisenhower Timer Matrix",
+        "status": "in-progress",
+        "year": "2024",
+        "url": "https://www.eisenhowertimer.com",
+        "description": "A productivity web application inspired by the Eisenhower Matrix that helps users prioritize tasks by urgency and importance.",
+        "highlights": [
+          "Built with React.js, Redux, and Material UI",
+          "Implemented IndexedDB for offline persistence",
+          "Dynamic drag-and-drop quadrant interface",
+          "Time tracking and productivity insights"
+        ],
+        "technologies": ["React", "Redux", "Material UI", "IndexedDB"]
+      },
+      {
+        "id": "proj-cookies",
+        "name": "Ghaz's Personal Cookies",
+        "status": "in-progress",
+        "year": "2022",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/Ghazs-Personal-Cookies",
+        "description": "A werkzeug application that renders multiple backend applications as one unified platform.",
+        "highlights": [
+          "Incorporated Flask and SQLAlchemy for tools application",
+          "Firebase-based semaphore for locking/unlocking",
+          "AWS S3 integration, QR code generation, Gmail API",
+          "Comprehensive endpoint logging system"
+        ],
+        "technologies": ["Python", "Flask", "SQLAlchemy", "Firebase", "AWS S3"]
+      },
+      {
+        "id": "proj-blog",
+        "name": "Ghaz's Blog",
+        "status": "in-progress",
+        "year": "2023",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/BlogBackend",
+        "description": "A React application with Express.js backend for creating and managing blog posts.",
+        "highlights": [
+          "Private endpoints for CRUD operations",
+          "Sequelize for database models",
+          "React frontend for rendering posts"
+        ],
+        "technologies": ["React", "Express.js", "Sequelize", "Node.js"]
+      },
+      {
+        "id": "proj-selfscribe",
+        "name": "Self Scribe",
+        "status": "in-progress",
+        "year": "2023",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/JournalingBackend",
+        "description": "A React Native journaling app with FastAPI backend.",
+        "highlights": [
+          "React Native mobile interface",
+          "FastAPI for journal entry management",
+          "Tortoise ORM for database operations"
+        ],
+        "technologies": ["React Native", "FastAPI", "Tortoise ORM", "Python"]
+      },
+      {
+        "id": "proj-kato",
+        "name": "Kato",
+        "status": "in-progress",
+        "year": "2023",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/Kato-Backend-Server/tree/Init-Falcon",
+        "description": "An API for creating chatbots using Falcon.",
+        "highlights": [
+          "TensorFlow for model creation and training",
+          "Model versioning system",
+          "Intent-based function execution"
+        ],
+        "technologies": ["Python", "TensorFlow", "Falcon"]
+      },
+      {
+        "id": "proj-vault",
+        "name": "Ghaz's Vault",
+        "status": "in-progress",
+        "year": "2022",
+        "description": "A Swift app for remote server access from mobile.",
+        "highlights": [
+          "Firebase semaphore for server connection",
+          "Calendar, events, QR codes, budgeting features",
+          "Private repository"
+        ],
+        "technologies": ["Swift", "SwiftUI", "Firebase"]
+      }
+    ],
+    "completed": [
+      {
+        "id": "proj-knowledge-graph",
+        "name": "Obsidian Knowledge 3D Graph",
+        "status": "completed",
+        "year": "2023",
+        "url": "https://knowledgegraph.ghazanfarshahbaz.com",
+        "description": "A Three.js application rendering 3D version of Obsidian knowledge graph.",
+        "highlights": [
+          "3D-force graph module for visualization",
+          "Python processing for Obsidian files"
+        ],
+        "technologies": ["Three.js", "Python", "3D Visualization"]
+      },
+      {
+        "id": "proj-leetcode-bot",
+        "name": "Leetcode Bot",
+        "status": "completed",
+        "year": "2020",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/leetcode-bot",
+        "description": "Discord bot for coding questions from multiple platforms.",
+        "highlights": [
+          "Web scraped from Leetcode, Euler, Codechef",
+          "Database storage for questions"
+        ],
+        "technologies": ["Python", "Discord.py", "Web Scraping"]
+      },
+      {
+        "id": "proj-shoe-tab",
+        "name": "The Shoe Tab",
+        "status": "completed",
+        "year": "2020",
+        "githubUrl": "https://github.com/GhazanfarShahbaz/The_Shoe_Tab",
+        "description": "Web app showing upcoming shoe release dates.",
+        "highlights": ["Automated web scraping", "Was hosted on Heroku"],
+        "technologies": ["Python", "Web Scraping", "Flask"]
+      },
+      {
+        "id": "proj-mouseion",
+        "name": "The Mouseion",
+        "status": "completed",
+        "year": "2020",
+        "url": "https://www.ghazanfarshahbaz.com/the_mouseion",
+        "description": "Recommendation system for books, movies, and games using KNN.",
+        "highlights": [
+          "Flask backend with pandas for data processing",
+          "KNN-based recommendations"
+        ],
+        "technologies": ["Python", "Flask", "pandas", "KNN"]
+      },
+      {
+        "id": "proj-loggedin",
+        "name": "LoggedIn",
+        "status": "completed",
+        "year": "2019",
+        "url": "https://ghazanfarshahbaz.github.io/LoggedIN/",
+        "description": "Social media connection web app created at All Star Code.",
+        "highlights": ["JavaScript for user population"],
+        "technologies": ["JavaScript", "HTML", "CSS"]
+      }
+    ],
+    "minor": [
+      {
+        "id": "proj-kato-theme",
+        "name": "VS Code Theme - Kato",
+        "url": "https://marketplace.visualstudio.com/items?itemName=Ghaz.Kato",
+        "description": "Custom VS Code color theme used across all projects."
+      }
+    ]
+  },
+  "leadership": [
+    {
+      "id": "lead-gdsc",
+      "organization": "Google Developer Student Club",
+      "location": "New York, NY",
+      "roles": [
+        {
+          "title": "Core Tech Lead, Treasurer",
+          "period": "Aug 2020 - Aug 2021"
+        },
+        { "title": "DSC Lead", "period": "Aug 2021 - Aug 2022" },
+        { "title": "Core Tech Lead, Advisor", "period": "Aug 2022 - Aug 2023" }
+      ],
+      "highlights": [
+        "Planned, coordinated, and taught Google technologies to club members",
+        "Attended other DSC events to learn about new technologies",
+        "Managed club expenditures and incoming revenue"
+      ]
+    }
+  ]
+}

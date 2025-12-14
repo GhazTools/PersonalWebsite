@@ -1,0 +1,145 @@
+{
+  "name": "Ghazanfar Shahbaz",
+  "title": "Software Engineer",
+  "tagline": "Building elegant solutions to complex problems",
+  "email": "ghazanfarshahbaz2409@gmail.com",
+  "location": "New York, NY",
+  "website": "https://ghazanfarshahbaz.me",
+  "linkedin": "https://linkedin.com/in/GhazanfarShahbaz",
+  "github": "https://github.com/GhazanfarShahbaz",
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Amazon",
+      "role": "Software Development Engineer",
+      "location": "New York, NY",
+      "startDate": "2024-06",
+      "endDate": null,
+      "description": "Working on AWS services and distributed systems at scale.",
+      "highlights": [
+        "Developing high-performance distributed systems",
+        "Contributing to AWS infrastructure improvements",
+        "Collaborating with cross-functional teams globally"
+      ],
+      "technologies": ["Java", "AWS", "Python", "Distributed Systems"],
+      "companyUrl": "https://amazon.com"
+    },
+    {
+      "id": "exp-2",
+      "company": "UnitedHealth Group",
+      "role": "Technology Development Program Associate",
+      "location": "New York, NY",
+      "startDate": "2023-07",
+      "endDate": "2024-06",
+      "description": "Full-stack development for healthcare technology solutions.",
+      "highlights": [
+        "Built scalable web applications serving millions of users",
+        "Implemented healthcare data processing pipelines",
+        "Led technical initiatives for process automation"
+      ],
+      "technologies": ["React", "Node.js", "Python", "SQL", "Azure"],
+      "companyUrl": "https://www.unitedhealthgroup.com"
+    },
+    {
+      "id": "exp-3",
+      "company": "Bloomberg LP",
+      "role": "Software Engineering Intern",
+      "location": "New York, NY",
+      "startDate": "2022-06",
+      "endDate": "2022-08",
+      "description": "Developed financial data visualization tools.",
+      "highlights": [
+        "Built interactive data visualization components",
+        "Optimized real-time data processing workflows",
+        "Collaborated with quantitative analysts"
+      ],
+      "technologies": ["Python", "JavaScript", "C++", "Financial Data"],
+      "companyUrl": "https://bloomberg.com"
+    },
+    {
+      "id": "exp-4",
+      "company": "Hunter College",
+      "role": "Undergraduate Researcher",
+      "location": "New York, NY",
+      "startDate": "2020-09",
+      "endDate": "2023-05",
+      "description": "Research in computational biology and machine learning.",
+      "highlights": [
+        "Developed ML models for protein structure prediction",
+        "Published research on bioinformatics algorithms",
+        "Mentored junior researchers"
+      ],
+      "technologies": ["Python", "TensorFlow", "Bioinformatics", "ML"]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "Hunter College, CUNY",
+      "degree": "Bachelor of Arts",
+      "field": "Computer Science",
+      "location": "New York, NY",
+      "startDate": "2019-08",
+      "endDate": "2023-05",
+      "gpa": "3.8",
+      "highlights": [
+        "Dean's List all semesters",
+        "President of Computer Science Club",
+        "Undergraduate Research Fellowship recipient"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "category": "Languages",
+      "skills": [
+        { "name": "Python", "level": 5, "yearsOfExperience": 5 },
+        { "name": "JavaScript/TypeScript", "level": 5, "yearsOfExperience": 4 },
+        { "name": "Java", "level": 4, "yearsOfExperience": 3 },
+        { "name": "C++", "level": 3, "yearsOfExperience": 2 },
+        { "name": "SQL", "level": 4, "yearsOfExperience": 4 }
+      ]
+    },
+    {
+      "id": "skill-2",
+      "category": "Frameworks & Libraries",
+      "skills": [
+        { "name": "React", "level": 5, "yearsOfExperience": 4 },
+        { "name": "Node.js", "level": 4, "yearsOfExperience": 3 },
+        { "name": "Django", "level": 4, "yearsOfExperience": 3 },
+        { "name": "TensorFlow", "level": 3, "yearsOfExperience": 2 },
+        { "name": "Spring Boot", "level": 3, "yearsOfExperience": 1 }
+      ]
+    },
+    {
+      "id": "skill-3",
+      "category": "Cloud & DevOps",
+      "skills": [
+        { "name": "AWS", "level": 4, "yearsOfExperience": 2 },
+        { "name": "Docker", "level": 4, "yearsOfExperience": 3 },
+        { "name": "Kubernetes", "level": 3, "yearsOfExperience": 1 },
+        { "name": "CI/CD", "level": 4, "yearsOfExperience": 3 },
+        { "name": "Git", "level": 5, "yearsOfExperience": 5 }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Personal Portfolio",
+      "description": "VS Code-inspired personal website built with React, TypeScript, and modern web technologies.",
+      "technologies": ["React", "TypeScript", "Vite", "Framer Motion"],
+      "githubUrl": "https://github.com/GhazTools/PersonalWebsite",
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "name": "GhazTools",
+      "description": "Collection of developer productivity tools and utilities.",
+      "technologies": ["Python", "TypeScript", "CLI"],
+      "githubUrl": "https://github.com/GhazTools",
+      "featured": true
+    }
+  ]
+}
