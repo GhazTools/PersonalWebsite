@@ -1,22 +1,17 @@
 /**
- * LeftBar component.
+ * LeftBar component - Modernized with MUI
  */
 import React from "react";
-import { createUseStyles } from "react-jss";
+import { Box, Divider } from "@mui/material";
 import IconLink from "../../../../components/IconLink";
 import { ContactItem } from "../../../../models";
 import { pages } from "./../../../../data";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 export interface LeftBarProps {
   contactData: ContactItem[];
 }
 
 const LeftBar: React.FC<LeftBarProps> = ({ contactData }) => {
-  const classes = useStyles();
-
   // Internal links.
   const internals = pages.map(({ name, url, icon, isInternal, badge }) => ({
     name,
@@ -41,17 +36,49 @@ const LeftBar: React.FC<LeftBarProps> = ({ contactData }) => {
     ));
   };
 
-  const renderDivider = () => <span className={classes.divider} />;
-
   return (
-    <div className={classes.root}>
-      <div>
+    <Box
+      sx={{
+        width: 48,
+        height: "100vh",
+        backgroundColor: "rgba(33, 37, 43, 0.95)",
+        backdropFilter: "blur(10px)",
+        borderRight: "1px solid rgba(255, 255, 255, 0.05)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        alignItems: "center",
+        py: 1,
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 0.5,
+        }}
+      >
         {renderData(internals)}
-        {renderDivider()}
+        <Divider
+          sx={{
+            width: "60%",
+            my: 0.5,
+            borderColor: "rgba(255, 255, 255, 0.1)",
+          }}
+        />
         {renderData(contactData)}
-      </div>
-      <div>{renderData(bottom)}</div>
-    </div>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {renderData(bottom)}
+      </Box>
+    </Box>
   );
 };
 

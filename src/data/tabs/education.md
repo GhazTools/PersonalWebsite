@@ -6,7 +6,7 @@
   - 2019-2023
 
 - [Programs]
-  - Facebook Above and Beyond CS 
+  - Facebook Above and Beyond CS
   - Codepath Cybersecurity
   - Google CSSI
   - All Star Code

@@ -1,15 +1,12 @@
 /**
- * IconLink component.
+ * IconLink component - Modernized with MUI
  */
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { createUseStyles } from "react-jss";
+import { Badge, IconButton, useTheme } from "@mui/material";
 import { ContactItem } from "../../models";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 const IconLink: React.FC<ContactItem> = ({
   name,
@@ -18,17 +15,38 @@ const IconLink: React.FC<ContactItem> = ({
   isInternal,
   badge,
 }) => {
-  const classes = useStyles();
+  const theme = useTheme();
 
   const iconComp = (
-    <span className={classes.iconWrapper}>
-      <FontAwesomeIcon
-        className={classes.icon}
-        icon={icon as IconProp}
-        size="lg"
-      />
-      {badge && <span className={classes.badge}>{badge}</span>}
-    </span>
+    <IconButton
+      aria-label={isInternal ? name : `Find me on ${name}`}
+      title={isInternal ? name : `Find me on ${name}`}
+      sx={{
+        color: "#9599a0",
+        transition: "all 0.2s ease-in-out",
+        padding: "6px",
+        "&:hover": {
+          color: theme.palette.primary.main,
+          backgroundColor: "rgba(102, 162, 251, 0.1)",
+          transform: "translateY(-2px)",
+        },
+      }}
+    >
+      <Badge
+        badgeContent={badge}
+        color="error"
+        sx={{
+          "& .MuiBadge-badge": {
+            fontSize: "0.6rem",
+            height: "14px",
+            minWidth: "14px",
+            padding: "0 3px",
+          },
+        }}
+      >
+        <FontAwesomeIcon icon={icon as IconProp} size="sm" />
+      </Badge>
+    </IconButton>
   );
 
   if (isInternal) {
@@ -36,9 +54,7 @@ const IconLink: React.FC<ContactItem> = ({
       <Link
         to={url}
         key={`left-bar-${name}`}
-        className={classes.link}
-        aria-label={name}
-        title={name}
+        style={{ textDecoration: "none" }}
       >
         {iconComp}
       </Link>
@@ -49,11 +65,9 @@ const IconLink: React.FC<ContactItem> = ({
     <a
       href={url}
       key={`left-bar-${name}`}
-      className={classes.link}
-      aria-label={`Find me on ${name}`}
-      title={`Find me on ${name}`}
       target="_blank"
       rel="noopener noreferrer"
+      style={{ textDecoration: "none" }}
     >
       {iconComp}
     </a>

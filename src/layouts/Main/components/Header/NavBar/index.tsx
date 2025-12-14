@@ -1,27 +1,26 @@
 /**
- * NavBar component.
+ * NavBar component - Modernized with MUI
  */
 import React from "react";
-import { createUseStyles } from "react-jss";
+import { Box } from "@mui/material";
 import NavItem from "./NavItem";
 import { TabProps } from "../../..";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 const Navbar: React.FC<TabProps> = ({ tabs }) => {
-  const classes = useStyles();
-
   return (
-    <nav className={classes.root}>
-      <ul className={classes.list}>
-        {tabs.map((tab) => (
-          <li className={classes.listItem} key={tab.name}>
-            <NavItem {...tab} />
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <Box
+      component="nav"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: 0.5,
+        height: "100%",
+      }}
+    >
+      {tabs.map((tab) => (
+        <NavItem key={tab.name} {...tab} />
+      ))}
+    </Box>
   );
 };
 

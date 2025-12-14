@@ -22,7 +22,7 @@ export const useLocalStorageState = <T>(
       value = JSON.parse(
         window.localStorage.getItem(key) || JSON.stringify(defaultObj),
       ) as LocalCache.Entry<T>;
-    } catch (e) {
+    } catch {
       value = defaultObj;
     }
     return value;

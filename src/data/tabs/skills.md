@@ -1,24 +1,28 @@
 ### Technical skills
-- IOS Development 
-- Web Development 
+
+- IOS Development
+- Web Development
 - Backend Serverside Development
 - Git
 - Debian, MacOS
 
-### Programming languages 
-- Python 
+### Programming languages
+
+- Python
 - C++
 - Rist
 - Swift
 - TypeScript
 - JavaScript
-- Java 
+- Java
 
 ### Machine Learning Frameworks
+
 - Tensorflow
 - Pytorch
 
 ### Backend Development Frameworks
+
 - Flask
 - Django
 - FastApi
@@ -29,14 +33,17 @@
 - Alembic
 - Pybind
 
-### Mobile App Development Framework 
+### Mobile App Development Framework
+
 - SwiftUI
 
 ### Frontend Development Frameworks
+
 - React
 - Angular
 
-### Rsearch Interests
+### Research Interests
+
 - Text Summarization
 - Speech Synthesis
 - Computational Linguistics
@@ -48,6 +55,7 @@
 - Machine Learning in Health Care
 
 ### Other Interests
+
 - Deep Learning
 - Natural Language Processing
 - IOS Development
@@ -55,11 +63,12 @@
 - Arduino Development
 
 ### Hobbies
+
 - Piano 🎹
 - Tennis🎾
 - Coding 💻
 - Running 🏃‍♂️
 - Reading 📚
 - Gaming 🎮
-- Cooking  🧑‍🍳
+- Cooking 🧑‍🍳
 - Rock Climbing 🧗‍♂️

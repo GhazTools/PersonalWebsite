@@ -1,12 +1,9 @@
 /**
- * Container components used in tabs.
+ * Container components used in tabs - Modernized with MUI
  */
 import React from "react";
-import { createUseStyles } from "react-jss";
+import { Box } from "@mui/material";
 import SEO, { SEOProps } from "../SEO";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 export interface ContainerProps {
   seo?: SEOProps;
@@ -14,14 +11,19 @@ export interface ContainerProps {
 }
 
 const Container: React.FC<ContainerProps> = ({ seo, children }) => {
-  const classes = useStyles();
-
   return (
     <>
       {!!seo && <SEO {...seo} />}
-      <div className={classes.root}>
-        <div className={classes.content}>{children}</div>
-      </div>
+      <Box
+        sx={{
+          maxWidth: "960px",
+          px: 2.5,
+          pt: 0,
+          pb: 10,
+        }}
+      >
+        {children}
+      </Box>
     </>
   );
 };

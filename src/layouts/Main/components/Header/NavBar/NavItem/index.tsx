@@ -1,14 +1,11 @@
 /**
- * NavItem component.
+ * NavItem component - Sleek macOS-inspired design
  */
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Box, IconButton, useTheme } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { createUseStyles } from "react-jss";
 import { TabSpec, TabLink } from "../../../../../../models";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 const NavItem: React.FC<TabSpec & TabLink> = ({
   name,
@@ -16,7 +13,7 @@ const NavItem: React.FC<TabSpec & TabLink> = ({
   mdFileName, // eslint-disable-line @typescript-eslint/no-unused-vars
   ...iconProps
 }) => {
-  const classes = useStyles();
+  const theme = useTheme();
   const navigate = useNavigate();
 
   const onCloseClicked = (e: React.MouseEvent) => {
@@ -26,24 +23,68 @@ const NavItem: React.FC<TabSpec & TabLink> = ({
   };
 
   return (
-    <span className={classes.root}>
-      <NavLink
-        to={url}
-        className={({ isActive }) =>
-          isActive ? classes.currentTab : classes.otherTab
-        }
-      >
-        <FontAwesomeIcon {...iconProps} size={iconProps.size || "lg"} />
-        <span className={classes.navText}>{name}</span>
-        <FontAwesomeIcon
-          onClick={onCloseClicked}
-          className="closeButton"
-          icon="times"
-          size="1x"
-          title="Close"
-        />
-      </NavLink>
-    </span>
+    <NavLink to={url} style={{ textDecoration: "none" }}>
+      {({ isActive }) => (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            px: 1.5,
+            py: 0.75,
+            position: "relative",
+            color: isActive
+              ? theme.palette.primary.main
+              : theme.palette.text.secondary,
+            transition: "color 0.2s ease-in-out",
+            cursor: "pointer",
+            fontSize: "0.875rem",
+            fontWeight: 500,
+            height: "100%",
+            "&:hover": {
+              color: theme.palette.primary.main,
+              "& .closeButton": {
+                opacity: 1,
+              },
+            },
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: isActive ? "80%" : "0%",
+              height: "2px",
+              backgroundColor: theme.palette.primary.main,
+              transition: "width 0.3s ease-in-out",
+            },
+            "&:hover::after": {
+              width: "80%",
+            },
+          }}
+        >
+          <FontAwesomeIcon {...iconProps} size="sm" />
+          <Box component="span">{name}</Box>
+          <IconButton
+            onClick={onCloseClicked}
+            className="closeButton"
+            size="small"
+            sx={{
+              p: 0.25,
+              opacity: 0,
+              transition: "opacity 0.2s",
+              color: "inherit",
+              ml: 0.5,
+              "&:hover": {
+                backgroundColor: "rgba(102, 162, 251, 0.2)",
+              },
+            }}
+          >
+            <FontAwesomeIcon icon="times" size="xs" />
+          </IconButton>
+        </Box>
+      )}
+    </NavLink>
   );
 };
 

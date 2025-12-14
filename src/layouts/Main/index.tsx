@@ -1,17 +1,14 @@
 /**
- * Main layout.
+ * Main layout - Modernized with MUI
  */
 import React, { useState } from "react";
-import { createUseStyles } from "react-jss";
-import clsx from "clsx";
+import { Box, Drawer, useTheme, useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
 import Header from "./components/Header";
 import LeftBar from "./components/LeftBar";
 import Explorer from "./components/Explorer";
 import StatusBar from "./components/StatusBar";
 import { ContactItem, TabLink } from "../../models";
-import styles from "./styles";
-
-const useStyles = createUseStyles(styles);
 
 export interface TabProps {
   tabs: TabLink[];
@@ -31,25 +28,107 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   tabs,
   contactData,
 }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [explorerOpen, setExplorerOpen] = useState(false);
-
-  const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <div className={classes.root}>
-      <LeftBar contactData={contactData} />
-      <Explorer tabs={tabs} open={explorerOpen} />
-      <main
-        className={clsx(classes.content, {
-          [classes.explorerOpen]: explorerOpen,
-        })}
+    <Box
+      sx={{
+        display: "flex",
+        minHeight: "100vh",
+        backgroundColor: theme.palette.background.default,
+        position: "relative",
+      }}
+    >
+      {/* Left Sidebar */}
+      <Box
+        component={motion.div}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        sx={{
+          width: 48,
+          flexShrink: 0,
+          position: "fixed",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          zIndex: theme.zIndex.drawer + 1,
+        }}
+      >
+        <LeftBar contactData={contactData} />
+      </Box>
+
+      {/* Explorer Drawer */}
+      <Drawer
+        variant={isMobile ? "temporary" : "persistent"}
+        open={explorerOpen}
+        onClose={() => setExplorerOpen(false)}
+        sx={{
+          width: explorerOpen ? 240 : 0,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: 240,
+            boxSizing: "border-box",
+            left: 48,
+            backgroundColor: "rgba(33, 37, 43, 0.95)",
+            backdropFilter: "blur(10px)",
+            borderRight: "1px solid rgba(255, 255, 255, 0.1)",
+          },
+        }}
+      >
+        <Explorer tabs={tabs} open={explorerOpen} />
+      </Drawer>
+
+      {/* Main Content */}
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          marginLeft: "48px",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          transition: theme.transitions.create(["margin"], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+          }),
+          ...(explorerOpen && {
+            marginLeft: "288px",
+          }),
+        }}
       >
         <Header tabs={tabs} />
-        {children}
-      </main>
-      <StatusBar />
-    </div>
+        <Box
+          component={motion.div}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          sx={{
+            flexGrow: 1,
+            p: { xs: 2, md: 3 },
+            pt: { xs: 2, md: 2 },
+            pb: 10,
+          }}
+        >
+          {children}
+        </Box>
+      </Box>
+
+      {/* Status Bar */}
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: theme.zIndex.appBar,
+        }}
+      >
+        <StatusBar />
+      </Box>
+    </Box>
   );
 };
 
