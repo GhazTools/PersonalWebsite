@@ -1,8 +1,9 @@
 import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Route } from "react-router-dom";
 import MDTab, { MDTabProps } from "./components/MDTab";
 import { PageProps } from "./models";
 import Greeter from "./views/Greeter";
+import NotFoundView from "./views/NotFoundView";
 import staticData from "./data/json/static.json";
 import contactData from "./data/json/contact.json";
 import pkg from "../package.json";
@@ -41,5 +42,5 @@ export default [
       element={comp ? <View comp={comp} /> : <Tab fileName={mdFileName!} />}
     />
   )),
-  <Route key="notfound" path="*" element={<Navigate to="/" replace />} />,
+  <Route key="notfound" path="*" element={<NotFoundView />} />,
 ];

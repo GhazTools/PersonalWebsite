@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Image Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #21252b 0%, #282c34 50%, #21252b 100%);
+      border-radius: 0;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Decorative elements */
+    .og-image::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(97, 175, 239, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .og-image::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(198, 120, 221, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    /* Left side - Code editor mockup */
+    .code-side {
+      width: 50%;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .code-window {
+      background: rgba(40, 44, 52, 0.9);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .window-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    
+    .dot.red { background: #e06c75; }
+    .dot.yellow { background: #e5c07b; }
+    .dot.green { background: #98c379; }
+    
+    .filename {
+      margin-left: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      font-family: 'SF Mono', Monaco, monospace;
+    }
+    
+    .code-content {
+      padding: 20px;
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .code-line {
+      display: flex;
+    }
+    
+    .line-number {
+      color: rgba(255, 255, 255, 0.3);
+      width: 30px;
+      text-align: right;
+      margin-right: 20px;
+      user-select: none;
+    }
+    
+    .keyword { color: #c678dd; }
+    .function { color: #61afef; }
+    .string { color: #98c379; }
+    .variable { color: #e5c07b; }
+    .comment { color: #5c6370; font-style: italic; }
+    .bracket { color: #abb2bf; }
+    .property { color: #e06c75; }
+    
+    /* Right side - Info */
+    .info-side {
+      width: 50%;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .name {
+      font-size: 56px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #61afef 0%, #c678dd 50%, #e06c75 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    
+    .title {
+      font-size: 28px;
+      color: #abb2bf;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+    
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .tag {
+      padding: 8px 16px;
+      background: rgba(97, 175, 239, 0.15);
+      border: 1px solid rgba(97, 175, 239, 0.3);
+      border-radius: 20px;
+      color: #61afef;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .tag.purple {
+      background: rgba(198, 120, 221, 0.15);
+      border-color: rgba(198, 120, 221, 0.3);
+      color: #c678dd;
+    }
+    
+    .tag.green {
+      background: rgba(152, 195, 121, 0.15);
+      border-color: rgba(152, 195, 121, 0.3);
+      color: #98c379;
+    }
+    
+    .tag.yellow {
+      background: rgba(229, 192, 123, 0.15);
+      border-color: rgba(229, 192, 123, 0.3);
+      color: #e5c07b;
+    }
+    
+    .url {
+      position: absolute;
+      bottom: 60px;
+      right: 60px;
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    .instructions {
+      margin-top: 40px;
+      color: #888;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="og-image">
+      <div class="code-side">
+        <div class="code-window">
+          <div class="window-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <span class="filename">portfolio.tsx</span>
+          </div>
+          <div class="code-content">
+            <div class="code-line">
+              <span class="line-number">1</span>
+              <span><span class="keyword">const</span> <span class="variable">developer</span> <span class="bracket">=</span> <span class="bracket">{</span></span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">2</span>
+              <span>&nbsp;&nbsp;<span class="property">name</span>: <span class="string">"Ghazanfar"</span>,</span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">3</span>
+              <span>&nbsp;&nbsp;<span class="property">role</span>: <span class="string">"Software Engineer"</span>,</span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">4</span>
+              <span>&nbsp;&nbsp;<span class="property">skills</span>: [<span class="string">"React"</span>, <span class="string">"TS"</span>, <span class="string">"Python"</span>],</span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">5</span>
+              <span>&nbsp;&nbsp;<span class="property">passion</span>: <span class="string">"Building products"</span>,</span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">6</span>
+              <span><span class="bracket">}</span>;</span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">7</span>
+              <span></span>
+            </div>
+            <div class="code-line">
+              <span class="line-number">8</span>
+              <span><span class="comment">// Let's build something amazing</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-side">
+        <div class="name">Ghazanfar Shahbaz</div>
+        <div class="title">Software Engineer & Builder</div>
+        <div class="tags">
+          <span class="tag">Full Stack</span>
+          <span class="tag purple">Machine Learning</span>
+          <span class="tag green">Open Source</span>
+          <span class="tag yellow">Startups</span>
+        </div>
+      </div>
+      <div class="url">ghaz.dev</div>
+    </div>
+    <p class="instructions">
+      Take a screenshot of the card above at 1200x630 pixels and save as <code>og-image.png</code>
+    </p>
+  </div>
+</body>
+</html>

@@ -9,7 +9,53 @@ export interface SEOProps {
   meta?: HTMLMetaElement[];
   image?: string;
   pathname?: string;
+  type?: "website" | "profile" | "article";
 }
+
+// JSON-LD Structured Data for Person
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ghazanfar Shahbaz",
+  url: metadata.homepage,
+  image: metadata.image,
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Technology Industry",
+  },
+  sameAs: [
+    "https://github.com/GhazanfarShahbaz",
+    "https://linkedin.com/in/GhazanfarShahbaz",
+  ],
+  knowsAbout: [
+    "Software Engineering",
+    "Full Stack Development",
+    "Machine Learning",
+    "React",
+    "TypeScript",
+    "Python",
+    "AWS",
+  ],
+};
+
+// JSON-LD for WebSite
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: metadata.title,
+  url: metadata.homepage,
+  description: metadata.description,
+  author: {
+    "@type": "Person",
+    name: "Ghazanfar Shahbaz",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${metadata.homepage}?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
 
 const SEO: React.FC<SEOProps> = ({
   title,
@@ -18,6 +64,7 @@ const SEO: React.FC<SEOProps> = ({
   meta = [],
   image,
   pathname = "",
+  type = "website",
 }) => {
   const metaDescription = description || metadata.description;
   const metaImage = image || metadata.image;
@@ -134,7 +181,13 @@ const SEO: React.FC<SEOProps> = ({
           href: canonicalUrl,
         },
       ]}
-    />
+    >
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+    </Helmet>
   );
 };
 

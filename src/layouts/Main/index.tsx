@@ -57,6 +57,30 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         position: "relative",
       }}
     >
+      {/* Skip to content link for accessibility */}
+      <Box
+        component="a"
+        href="#main-content"
+        sx={{
+          position: "absolute",
+          top: -100,
+          left: 0,
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.contrastText,
+          padding: "8px 16px",
+          zIndex: 9999,
+          fontWeight: 600,
+          textDecoration: "none",
+          borderRadius: "0 0 4px 0",
+          "&:focus": {
+            top: 0,
+            outline: `2px solid ${theme.palette.primary.light}`,
+            outlineOffset: 2,
+          },
+        }}
+      >
+        Skip to main content
+      </Box>
       {/* Left Sidebar - Hidden on mobile */}
       {!isMobile && (
         <Box
@@ -121,12 +145,17 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       {/* Main Content */}
       <Box
         component="main"
+        id="main-content"
+        tabIndex={-1}
+        role="main"
+        aria-label="Main content"
         sx={{
           flexGrow: 1,
           marginLeft: { xs: 0, md: "56px" },
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
+          outline: "none",
           transition: theme.transitions.create(["margin"], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,

@@ -2,7 +2,13 @@
  * Command Palette - VS Code-style quick navigation (⌘K)
  */
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+  useCallback,
+} from "react";
 import {
   Box,
   Typography,
@@ -134,6 +140,25 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
     }
   }, [open]);
 
+  // Keep selected index in bounds
+  useEffect(() => {
+    if (selectedIndex >= filteredCommands.length) {
+      setSelectedIndex(Math.max(0, filteredCommands.length - 1));
+    }
+  }, [filteredCommands.length, selectedIndex]);
+
+  const handleSelect = useCallback(
+    (cmd: CommandItem) => {
+      onClose();
+      if (cmd.url.startsWith("http")) {
+        window.open(cmd.url, "_blank", "noopener,noreferrer");
+      } else {
+        navigate(cmd.url);
+      }
+    },
+    [navigate, onClose],
+  );
+
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -165,23 +190,7 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, selectedIndex, filteredCommands, onClose]);
-
-  // Keep selected index in bounds
-  useEffect(() => {
-    if (selectedIndex >= filteredCommands.length) {
-      setSelectedIndex(Math.max(0, filteredCommands.length - 1));
-    }
-  }, [filteredCommands.length, selectedIndex]);
-
-  const handleSelect = (cmd: CommandItem) => {
-    onClose();
-    if (cmd.url.startsWith("http")) {
-      window.open(cmd.url, "_blank", "noopener,noreferrer");
-    } else {
-      navigate(cmd.url);
-    }
-  };
+  }, [open, selectedIndex, filteredCommands, onClose, handleSelect]);
 
   // Group commands by category
   const groupedCommands = useMemo(() => {

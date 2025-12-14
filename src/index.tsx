@@ -8,6 +8,7 @@ import { createCustomTheme } from "./theme/muiTheme";
 import { ThemeProvider, useThemeMode } from "./contexts/ThemeContext";
 import "normalize.css";
 import "./styles/scrollbar.css";
+import "./styles/accessibility.css";
 import "./theme/icons";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
