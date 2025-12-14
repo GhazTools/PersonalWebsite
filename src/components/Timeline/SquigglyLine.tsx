@@ -220,7 +220,8 @@ const SquigglyLine: React.FC<SquigglyLineProps> = ({
       setDotXPositions(xPositions);
       hasCalculatedDots.current = true;
     }
-  }, [dotPositions.length]); // Only depend on length, not the array itself
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dotPositions.length]); // Only depend on length to avoid recalculating on every scroll
 
   if (totalHeight < 100) return null;
 
