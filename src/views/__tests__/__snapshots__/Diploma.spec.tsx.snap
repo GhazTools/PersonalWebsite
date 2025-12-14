@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Diploma /> should render correctly 1`] = `
+exports[`<Diploma /> > should render correctly 1`] = `
 <DocumentFragment>
   <div
     class="root-0-2-4"
@@ -10,17 +10,17 @@ exports[`<Diploma /> should render correctly 1`] = `
     >
       <div
         class="title-0-2-1"
-        currentitem="false"
-        data-class="tip-0-2-2"
-        data-tip="Long story short, I've been thinking about pursuing a postgraduate degree in software engineering for a while now but, eventually, I've decided to go my way. So, here it is, my self-curated apprenticeship program in software engineering! I will be attending courses listed below and will be doing practical assignments throughout my studies but it won't necessarily be my priority to pursue any form of 'certificate of completion'. We'll all see how it goes. :)"
+        data-tooltip-class-name="tip-0-2-2"
+        data-tooltip-content="Bachelor of Art's, Computer Science"
+        data-tooltip-id="diploma-tooltip"
       >
         <h2>
-          Apprenticeship in Software Engineering
+          Bachelor of Art's, Computer Science
         </h2>
         <svg
           aria-hidden="true"
-          class="svg-inline--fa fa-question-circle fa-w-16 "
-          data-icon="question-circle"
+          class="svg-inline--fa fa-circle-question "
+          data-icon="circle-question"
           data-prefix="fas"
           focusable="false"
           role="img"
@@ -28,13 +28,10 @@ exports[`<Diploma /> should render correctly 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
             fill="currentColor"
           />
         </svg>
-        <p>
-          Specialization in Data Science
-        </p>
       </div>
       <div
         class="contents-0-2-3"
@@ -45,10 +42,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/01/2022 - 30/06/2022"
             >
               1. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -56,13 +57,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="17% done"
               >
                 SWE 510 Introduction to Computer Science
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 17%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -76,7 +76,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -125,7 +124,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="33% done"
                 >
                   <svg
@@ -177,13 +175,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="100% done"
               >
                 SWE 513 Introduction to Object Oriented Programming
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 100%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -197,7 +194,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="100% done"
                 >
                   <svg
@@ -249,13 +245,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 515 Database Systems
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -269,7 +264,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -321,13 +315,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 517 Principles of Software Engineering
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -341,7 +334,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -393,13 +385,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="47% done"
               >
                 MAT 510 Mathematics I
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 47%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -413,7 +404,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="43% done"
                 >
                   <svg
@@ -462,7 +452,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="50% done"
                 >
                   <svg
@@ -516,10 +505,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/07/2022 - 31/12/2022"
             >
               2. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -527,13 +520,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="100% done"
               >
                 SWE 520 Python Programming
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 100%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -547,7 +539,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="100% done"
                 >
                   <svg
@@ -599,13 +590,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 523 Software Requirements Engineering
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -619,7 +609,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -671,13 +660,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 525 Software Development Lifecycle
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -691,7 +679,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -743,13 +730,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 527 Software Design and Architecture
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -763,7 +749,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -815,13 +800,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 MAT 520 Mathematics II
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -835,7 +819,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -889,10 +872,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/01/2023 - 30/06/2023"
             >
               3. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -900,13 +887,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 530 Introduction to Operating Systems
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -920,7 +906,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -972,13 +957,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="50% done"
               >
                 SWE 533 Secure Software Development
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 50%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -992,7 +976,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="50% done"
                 >
                   <svg
@@ -1044,13 +1027,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 535 Managing Software Development
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1064,7 +1046,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1116,13 +1097,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 537 Software Verification and Validation
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1136,7 +1116,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1188,13 +1167,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 MAT 530 Mathematics III
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1208,7 +1186,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1262,10 +1239,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/07/2023 - 31/12/2023"
             >
               4. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -1273,13 +1254,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 540 Computer Systems Security
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1293,7 +1273,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1345,13 +1324,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 543 Data Structures and Algorithms
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1365,7 +1343,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1417,13 +1394,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 545 Human-Computer Interaction
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1437,7 +1413,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1489,13 +1464,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 547 Computer Networking
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1509,7 +1483,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1561,13 +1534,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 MAT 540 Mathematics IV
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1581,7 +1553,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1630,7 +1601,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1684,10 +1654,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/01/2024 - 30/06/2024"
             >
               5. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -1695,13 +1669,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 550 Cloud Computing
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1715,7 +1688,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1767,13 +1739,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 SWE 553 Blockchain Technology
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1787,7 +1758,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1839,13 +1809,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 550 Introduction to Statistics and Probability
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1859,7 +1828,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1911,13 +1879,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 553 Introduction to Data Science
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -1931,7 +1898,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -1983,13 +1949,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 MAT 550 Discrete Mathematics
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2003,7 +1968,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2057,10 +2021,14 @@ exports[`<Diploma /> should render correctly 1`] = `
         >
           <summary>
             <span
-              currentitem="false"
               data-tip="01/07/2024 - 31/12/2024"
             >
               6. Semester
+              <span
+                class="overDue-0-2-7"
+              >
+                overdue
+              </span>
             </span>
           </summary>
           <details
@@ -2068,13 +2036,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 560 Machine Learning
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2088,7 +2055,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2140,13 +2106,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 563 Applied Data Science
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2160,7 +2125,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2212,13 +2176,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 565 Computer Vision
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2232,7 +2195,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2284,13 +2246,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 DSC 567 Autonomous Systems Engineering
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2304,7 +2265,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2356,13 +2316,12 @@ exports[`<Diploma /> should render correctly 1`] = `
           >
             <summary>
               <span
-                currentitem="false"
                 data-tip="0% done"
               >
                 MAT 560 Mathematics for Machine Learning
               </span>
               <div
-                style="width: 500px; height: 3px; background-color: hsl(220, 13%, 20%); margin-top: 3px;"
+                style="width: 500px; height: 3px; background-color: rgb(45, 50, 58); margin-top: 3px;"
               >
                 <div
                   style="height: 100%; width: 0%; background-color: rgb(152, 195, 121); transition: width 500ms ease;"
@@ -2376,7 +2335,6 @@ exports[`<Diploma /> should render correctly 1`] = `
                 class="bookItem-0-2-12"
               >
                 <span
-                  currentitem="false"
                   data-tip="0% done"
                 >
                   <svg
@@ -2424,91 +2382,6 @@ exports[`<Diploma /> should render correctly 1`] = `
             </div>
           </details>
         </details>
-      </div>
-      <div
-        class="__react_component_tooltip t00000000-0000-4000-8000-000000000000 place-top type-dark"
-        data-id="tooltip"
-        id="t00000000-0000-4000-8000-000000000000"
-      >
-        <style
-          aria-hidden="true"
-        >
-          
-  	.t00000000-0000-4000-8000-000000000000 {
-	    color: #fff;
-	    background: #222;
-	    border: 1px solid transparent;
-  	}
-
-  	.t00000000-0000-4000-8000-000000000000.place-top {
-        margin-top: -10px;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-top::before {
-        border-top: 8px solid transparent;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-top::after {
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        bottom: -6px;
-        left: 50%;
-        margin-left: -8px;
-        border-top-color: #222;
-        border-top-style: solid;
-        border-top-width: 6px;
-    }
-
-    .t00000000-0000-4000-8000-000000000000.place-bottom {
-        margin-top: 10px;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-bottom::before {
-        border-bottom: 8px solid transparent;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-bottom::after {
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        top: -6px;
-        left: 50%;
-        margin-left: -8px;
-        border-bottom-color: #222;
-        border-bottom-style: solid;
-        border-bottom-width: 6px;
-    }
-
-    .t00000000-0000-4000-8000-000000000000.place-left {
-        margin-left: -10px;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-left::before {
-        border-left: 8px solid transparent;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-left::after {
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        right: -6px;
-        top: 50%;
-        margin-top: -4px;
-        border-left-color: #222;
-        border-left-style: solid;
-        border-left-width: 6px;
-    }
-
-    .t00000000-0000-4000-8000-000000000000.place-right {
-        margin-left: 10px;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-right::before {
-        border-right: 8px solid transparent;
-    }
-    .t00000000-0000-4000-8000-000000000000.place-right::after {
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        left: -6px;
-        top: 50%;
-        margin-top: -4px;
-        border-right-color: #222;
-        border-right-style: solid;
-        border-right-width: 6px;
-    }
-  
-        </style>
       </div>
     </div>
   </div>

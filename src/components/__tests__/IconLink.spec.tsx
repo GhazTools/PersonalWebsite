@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import IconLink from "../IconLink";
 
 describe("<IconLink />", () => {
@@ -10,7 +11,11 @@ describe("<IconLink />", () => {
       icon: "home",
       isInternal: true,
     };
-    const { asFragment } = render(<IconLink {...internalLink} />);
+    const { asFragment } = render(
+      <BrowserRouter>
+        <IconLink {...internalLink} />
+      </BrowserRouter>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 });

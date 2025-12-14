@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<GHButton /> should render correctly 1`] = `
+exports[`<GHButton /> > should render correctly 1`] = `
 <DocumentFragment>
   <a
     aria-label="Follow @caglarturali on GitHub"
@@ -15,7 +15,7 @@ exports[`<GHButton /> should render correctly 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="svg-inline--fa fa-github fa-w-16 fa-lg icon"
+        class="svg-inline--fa fa-github fa-lg icon"
         data-icon="github"
         data-prefix="fab"
         focusable="false"

@@ -1,10 +1,20 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { vi } from "vitest";
 import GHButton from "../GHButton";
 
+// Mock localStorage
+const localStorageMock = {
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
+  clear: vi.fn(),
+};
+global.localStorage = localStorageMock as any;
+
 describe("<GHButton />", () => {
-  test("should render correctly", async () => {
-    const { asFragment } = await render(
+  test("should render correctly", () => {
+    const { asFragment } = render(
       <GHButton
         resource={{
           endpoint: "https://api.github.com/users/caglarturali",
