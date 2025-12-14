@@ -2,6 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { theme } from "./theme/muiTheme";
 import "normalize.css";
 import "./theme/icons";
 import App from "./App";
@@ -12,16 +15,19 @@ const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <HelmetProvider>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );
 

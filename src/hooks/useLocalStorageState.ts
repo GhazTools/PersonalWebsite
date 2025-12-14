@@ -11,17 +11,17 @@ export const useLocalStorageState = <T>(
   key: string,
   defaultValue: T,
 ): [
-  LocalCache.Record<T>,
-  React.Dispatch<React.SetStateAction<LocalCache.Record<T>>>,
+  LocalCache.Entry<T>,
+  React.Dispatch<React.SetStateAction<LocalCache.Entry<T>>>,
 ] => {
-  const [state, setState] = useState<LocalCache.Record<T>>(() => {
+  const [state, setState] = useState<LocalCache.Entry<T>>(() => {
     const defaultObj = buildRecordObject(defaultValue);
     let value;
 
     try {
       value = JSON.parse(
         window.localStorage.getItem(key) || JSON.stringify(defaultObj),
-      ) as LocalCache.Record<T>;
+      ) as LocalCache.Entry<T>;
     } catch (e) {
       value = defaultObj;
     }

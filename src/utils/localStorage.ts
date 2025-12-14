@@ -8,7 +8,7 @@ export const buildRecordObject = <T>(data: T) => {
   return {
     data,
     lastChecked: Date.now(),
-  } as LocalCache.Record<T>;
+  } as LocalCache.Entry<T>;
 };
 
 /**
@@ -18,7 +18,7 @@ export const buildRecordObject = <T>(data: T) => {
  * @param timeout Timeout in minutes
  */
 export const isRecordExpired = <T>(
-  record: LocalCache.Record<T>,
+  record: LocalCache.Entry<T>,
   timeout: number,
 ) => {
   return Date.now() > record.lastChecked + timeout * 60 * 1000;
@@ -31,7 +31,7 @@ export const isRecordExpired = <T>(
  * @param timeout Timeout in minutes
  */
 export const isRecordUsable = <T>(
-  record: LocalCache.Record<T>,
+  record: LocalCache.Entry<T>,
   timeout: number,
 ) => {
   return record.data !== undefined && !isRecordExpired(record, timeout);

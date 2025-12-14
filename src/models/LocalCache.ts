@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 export declare namespace LocalCache {
-  export interface Record<T = Record<string, unknown>> {
+  export interface Entry<T = Record<string, any>> {
     lastChecked: number;
     data: T;
   }
