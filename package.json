@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/GhazTools/PersonalWebsite"
   },
-  "homepage": "https://turali.js.org",
+  "homepage": "https://ghaz.dev",
   "license": "GNU GPLv3",
   "scripts": {
     "dev": "vite",
