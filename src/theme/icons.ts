@@ -17,6 +17,8 @@ import {
   faQuestionCircle,
   faFile,
   faBlog,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -37,4 +39,6 @@ library.add(
   faQuestionCircle,
   faFile,
   faBlog,
+  faSun,
+  faMoon,
 );

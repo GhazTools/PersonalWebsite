@@ -1,16 +1,11 @@
 import React from "react";
 import Greeter from "../views/Greeter";
-import Diploma from "../views/Diploma";
 import { PageLink, TabLink } from "../models";
 import { jsOrange, midBlue, green, pink } from "../theme/colors";
 
 import staticData from "./json/static.json";
 import contactData from "./json/contact.json";
-import sweData from "./json/swe.json";
-import baData from "./json/ba.json";
 import pkg from "../../package.json";
-
-import { calculateDiplomaProgress } from "../utils";
 
 export const pages: PageLink[] = [
   {
@@ -26,22 +21,6 @@ export const pages: PageLink[] = [
       />
     ),
   },
-  // {
-  //   name: 'Software Engineering',
-  //   url: '/swe',
-  //   icon: 'graduation-cap',
-  //   isInternal: true,
-  //   badge: `${calculateDiplomaProgress(sweData, 0)}%`,
-  //   comp: () => <Diploma diplomaData={sweData} />,
-  // },
-  // {
-  //   name: 'Business Administration',
-  //   url: '/ba',
-  //   icon: 'graduation-cap',
-  //   isInternal: true,
-  //   badge: `${calculateDiplomaProgress(baData, 0)}%`,
-  //   comp: () => <Diploma diplomaData={baData} />,
-  // },
 ];
 
 export const tabs: TabLink[] = [

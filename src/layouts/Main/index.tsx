@@ -29,6 +29,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   contactData,
 }) => {
   const [explorerOpen, setExplorerOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -41,24 +42,45 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         position: "relative",
       }}
     >
-      {/* Left Sidebar */}
-      <Box
-        component={motion.div}
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
+      {/* Left Sidebar - Hidden on mobile */}
+      {!isMobile && (
+        <Box
+          component={motion.div}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          sx={{
+            width: 48,
+            flexShrink: 0,
+            position: "fixed",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            zIndex: theme.zIndex.drawer + 1,
+          }}
+        >
+          <LeftBar contactData={contactData} />
+        </Box>
+      )}
+
+      {/* Mobile Menu Drawer */}
+      <Drawer
+        anchor="left"
+        open={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
         sx={{
-          width: 48,
-          flexShrink: 0,
-          position: "fixed",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          zIndex: theme.zIndex.drawer + 1,
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            width: 250,
+            backgroundColor: "rgba(33, 37, 43, 0.98)",
+            backdropFilter: "blur(10px)",
+          },
         }}
       >
-        <LeftBar contactData={contactData} />
-      </Box>
+        <Box sx={{ p: 2 }}>
+          <LeftBar contactData={contactData} />
+        </Box>
+      </Drawer>
 
       {/* Explorer Drawer */}
       <Drawer
@@ -86,7 +108,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         component="main"
         sx={{
           flexGrow: 1,
-          marginLeft: "48px",
+          marginLeft: { xs: 0, md: "48px" },
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
@@ -94,12 +116,16 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
           }),
-          ...(explorerOpen && {
-            marginLeft: "288px",
-          }),
+          ...(explorerOpen &&
+            !isMobile && {
+              marginLeft: "288px",
+            }),
         }}
       >
-        <Header tabs={tabs} />
+        <Header
+          tabs={tabs}
+          onMobileMenuToggle={() => setMobileMenuOpen(!mobileMenuOpen)}
+        />
         <Box
           component={motion.div}
           initial={{ opacity: 0, y: 20 }}

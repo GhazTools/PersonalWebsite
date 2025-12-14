@@ -3,7 +3,8 @@
  */
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Box, useTheme } from "@mui/material";
+import { Box, Skeleton, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 import Container from "../Container";
 
 export interface MDTabProps {
@@ -12,21 +13,44 @@ export interface MDTabProps {
 
 const MDTab: React.FC<MDTabProps> = ({ fileName }) => {
   const [contents, setContents] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
   const theme = useTheme();
 
   useEffect(() => {
+    setLoading(true);
     const loadFile = async () => {
       const file = await import(`../../data/tabs/${fileName}.md`);
       const response = await fetch(file.default);
       const text = await response.text();
       setContents(text);
+      setLoading(false);
     };
     loadFile();
   }, [fileName]);
 
+  if (loading) {
+    return (
+      <Container seo={{ title: fileName }}>
+        <Box sx={{ pb: 10, maxWidth: "900px" }}>
+          <Skeleton variant="text" width="60%" height={60} sx={{ mb: 2 }} />
+          <Skeleton variant="text" width="80%" height={30} sx={{ mb: 1 }} />
+          <Skeleton variant="text" width="90%" height={30} sx={{ mb: 1 }} />
+          <Skeleton variant="text" width="75%" height={30} sx={{ mb: 3 }} />
+          <Skeleton variant="text" width="50%" height={40} sx={{ mb: 2 }} />
+          <Skeleton variant="text" width="85%" height={30} sx={{ mb: 1 }} />
+          <Skeleton variant="text" width="80%" height={30} sx={{ mb: 1 }} />
+        </Box>
+      </Container>
+    );
+  }
+
   return (
     <Container seo={{ title: fileName }}>
       <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         sx={{
           pb: 10,
           maxWidth: "900px",

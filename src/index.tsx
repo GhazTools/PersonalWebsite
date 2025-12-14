@@ -2,9 +2,10 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { theme } from "./theme/muiTheme";
+import { createCustomTheme } from "./theme/muiTheme";
+import { ThemeProvider, useThemeMode } from "./contexts/ThemeContext";
 import "normalize.css";
 import "./theme/icons";
 import App from "./App";
@@ -13,9 +14,12 @@ import * as serviceWorker from "./serviceWorker";
 const container = document.getElementById("root");
 const root = createRoot(container!);
 
-root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
+const AppWithTheme = () => {
+  const { mode } = useThemeMode();
+  const theme = React.useMemo(() => createCustomTheme(mode), [mode]);
+
+  return (
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <HelmetProvider>
         <BrowserRouter
@@ -27,6 +31,14 @@ root.render(
           <App />
         </BrowserRouter>
       </HelmetProvider>
+    </MuiThemeProvider>
+  );
+};
+
+root.render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <AppWithTheme />
     </ThemeProvider>
   </React.StrictMode>,
 );
