@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { pages, tabs } from "../../data";
 
@@ -228,266 +228,262 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ open, onClose }) => {
         },
       }}
     >
-      <AnimatePresence>
-        {open && (
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.15 }}
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: -20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -10, scale: 0.98 }}
+        transition={{ duration: 0.15 }}
+        sx={{
+          width: "100%",
+          maxWidth: 560,
+          mx: 2,
+          background: isDark
+            ? "linear-gradient(180deg, rgba(40, 44, 52, 0.98) 0%, rgba(33, 37, 43, 0.98) 100%)"
+            : "linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%)",
+          borderRadius: 2,
+          border: isDark
+            ? "1px solid rgba(255, 255, 255, 0.1)"
+            : "1px solid rgba(0, 0, 0, 0.1)",
+          boxShadow: isDark
+            ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+            : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+          overflow: "hidden",
+        }}
+      >
+        {/* Search Input */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1.5,
+            px: 2,
+            py: 1.5,
+            borderBottom: isDark
+              ? "1px solid rgba(255, 255, 255, 0.08)"
+              : "1px solid rgba(0, 0, 0, 0.08)",
+          }}
+        >
+          <FontAwesomeIcon
+            icon="search"
+            style={{
+              fontSize: 14,
+              color: theme.palette.text.secondary,
+            }}
+          />
+          <InputBase
+            inputRef={inputRef}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Type a command or search..."
+            fullWidth
             sx={{
-              width: "100%",
-              maxWidth: 560,
-              mx: 2,
-              background: isDark
-                ? "linear-gradient(180deg, rgba(40, 44, 52, 0.98) 0%, rgba(33, 37, 43, 0.98) 100%)"
-                : "linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%)",
-              borderRadius: 2,
-              border: isDark
-                ? "1px solid rgba(255, 255, 255, 0.1)"
-                : "1px solid rgba(0, 0, 0, 0.1)",
-              boxShadow: isDark
-                ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
-                : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-              overflow: "hidden",
+              fontSize: "0.95rem",
+              color: theme.palette.text.primary,
+              "& input::placeholder": {
+                color: theme.palette.text.secondary,
+                opacity: 0.7,
+              },
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 0.5,
+              px: 1,
+              py: 0.25,
+              borderRadius: 0.5,
+              backgroundColor: isDark
+                ? "rgba(255, 255, 255, 0.06)"
+                : "rgba(0, 0, 0, 0.06)",
             }}
           >
-            {/* Search Input */}
-            <Box
+            <Typography
+              variant="caption"
               sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1.5,
-                px: 2,
-                py: 1.5,
-                borderBottom: isDark
-                  ? "1px solid rgba(255, 255, 255, 0.08)"
-                  : "1px solid rgba(0, 0, 0, 0.08)",
+                fontSize: "0.65rem",
+                color: theme.palette.text.secondary,
               }}
             >
-              <FontAwesomeIcon
-                icon="search"
-                style={{
-                  fontSize: 14,
-                  color: theme.palette.text.secondary,
-                }}
-              />
-              <InputBase
-                inputRef={inputRef}
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Type a command or search..."
-                fullWidth
-                sx={{
-                  fontSize: "0.95rem",
-                  color: theme.palette.text.primary,
-                  "& input::placeholder": {
-                    color: theme.palette.text.secondary,
-                    opacity: 0.7,
-                  },
-                }}
-              />
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 0.5,
-                  px: 1,
-                  py: 0.25,
-                  borderRadius: 0.5,
-                  backgroundColor: isDark
-                    ? "rgba(255, 255, 255, 0.06)"
-                    : "rgba(0, 0, 0, 0.06)",
-                }}
+              esc
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Results */}
+        <Box
+          sx={{
+            maxHeight: 400,
+            overflowY: "auto",
+            py: 1,
+          }}
+        >
+          {filteredCommands.length === 0 ? (
+            <Box sx={{ px: 2, py: 4, textAlign: "center" }}>
+              <Typography
+                variant="body2"
+                sx={{ color: theme.palette.text.secondary }}
               >
+                No results found
+              </Typography>
+            </Box>
+          ) : (
+            Object.entries(groupedCommands).map(([category, items]) => (
+              <Box key={category}>
                 <Typography
                   variant="caption"
                   sx={{
+                    display: "block",
+                    px: 2,
+                    py: 0.75,
                     fontSize: "0.65rem",
+                    fontWeight: 600,
                     color: theme.palette.text.secondary,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
                   }}
                 >
-                  esc
+                  {category}
                 </Typography>
-              </Box>
-            </Box>
+                <List dense disablePadding>
+                  {items.map((cmd, itemIdx) => {
+                    const flatIdx = getFlatIndex(category, itemIdx);
+                    const isSelected = flatIdx === selectedIndex;
 
-            {/* Results */}
-            <Box
-              sx={{
-                maxHeight: 400,
-                overflowY: "auto",
-                py: 1,
-              }}
-            >
-              {filteredCommands.length === 0 ? (
-                <Box sx={{ px: 2, py: 4, textAlign: "center" }}>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: theme.palette.text.secondary }}
-                  >
-                    No results found
-                  </Typography>
-                </Box>
-              ) : (
-                Object.entries(groupedCommands).map(([category, items]) => (
-                  <Box key={category}>
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        display: "block",
-                        px: 2,
-                        py: 0.75,
-                        fontSize: "0.65rem",
-                        fontWeight: 600,
-                        color: theme.palette.text.secondary,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.05em",
-                      }}
-                    >
-                      {category}
-                    </Typography>
-                    <List dense disablePadding>
-                      {items.map((cmd, itemIdx) => {
-                        const flatIdx = getFlatIndex(category, itemIdx);
-                        const isSelected = flatIdx === selectedIndex;
-
-                        return (
-                          <ListItem
-                            key={cmd.id}
-                            onClick={() => handleSelect(cmd)}
+                    return (
+                      <ListItem
+                        key={cmd.id}
+                        onClick={() => handleSelect(cmd)}
+                        sx={{
+                          px: 2,
+                          py: 0.75,
+                          cursor: "pointer",
+                          backgroundColor: isSelected
+                            ? isDark
+                              ? "rgba(97, 175, 239, 0.15)"
+                              : "rgba(97, 175, 239, 0.1)"
+                            : "transparent",
+                          "&:hover": {
+                            backgroundColor: isDark
+                              ? "rgba(255, 255, 255, 0.05)"
+                              : "rgba(0, 0, 0, 0.04)",
+                          },
+                        }}
+                      >
+                        <ListItemIcon sx={{ minWidth: 32 }}>
+                          <FontAwesomeIcon
+                            icon={cmd.icon}
+                            style={{
+                              fontSize: 14,
+                              color: cmd.color,
+                            }}
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={cmd.name}
+                          primaryTypographyProps={{
+                            sx: {
+                              fontSize: "0.875rem",
+                              fontWeight: isSelected ? 500 : 400,
+                              color: theme.palette.text.primary,
+                            },
+                          }}
+                        />
+                        {isSelected && (
+                          <Typography
+                            variant="caption"
                             sx={{
-                              px: 2,
-                              py: 0.75,
-                              cursor: "pointer",
-                              backgroundColor: isSelected
-                                ? isDark
-                                  ? "rgba(97, 175, 239, 0.15)"
-                                  : "rgba(97, 175, 239, 0.1)"
-                                : "transparent",
-                              "&:hover": {
-                                backgroundColor: isDark
-                                  ? "rgba(255, 255, 255, 0.05)"
-                                  : "rgba(0, 0, 0, 0.04)",
-                              },
+                              fontSize: "0.65rem",
+                              color: theme.palette.text.secondary,
+                              px: 0.75,
+                              py: 0.25,
+                              borderRadius: 0.5,
+                              backgroundColor: isDark
+                                ? "rgba(255, 255, 255, 0.06)"
+                                : "rgba(0, 0, 0, 0.06)",
                             }}
                           >
-                            <ListItemIcon sx={{ minWidth: 32 }}>
-                              <FontAwesomeIcon
-                                icon={cmd.icon as any}
-                                style={{
-                                  fontSize: 14,
-                                  color: cmd.color,
-                                }}
-                              />
-                            </ListItemIcon>
-                            <ListItemText
-                              primary={cmd.name}
-                              primaryTypographyProps={{
-                                sx: {
-                                  fontSize: "0.875rem",
-                                  fontWeight: isSelected ? 500 : 400,
-                                  color: theme.palette.text.primary,
-                                },
-                              }}
-                            />
-                            {isSelected && (
-                              <Typography
-                                variant="caption"
-                                sx={{
-                                  fontSize: "0.65rem",
-                                  color: theme.palette.text.secondary,
-                                  px: 0.75,
-                                  py: 0.25,
-                                  borderRadius: 0.5,
-                                  backgroundColor: isDark
-                                    ? "rgba(255, 255, 255, 0.06)"
-                                    : "rgba(0, 0, 0, 0.06)",
-                                }}
-                              >
-                                ↵
-                              </Typography>
-                            )}
-                          </ListItem>
-                        );
-                      })}
-                    </List>
-                  </Box>
-                ))
-              )}
-            </Box>
+                            ↵
+                          </Typography>
+                        )}
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              </Box>
+            ))
+          )}
+        </Box>
 
-            {/* Footer hint */}
-            <Box
+        {/* Footer hint */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 2,
+            px: 2,
+            py: 1,
+            borderTop: isDark
+              ? "1px solid rgba(255, 255, 255, 0.06)"
+              : "1px solid rgba(0, 0, 0, 0.06)",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <Typography
+              variant="caption"
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 2,
-                px: 2,
-                py: 1,
-                borderTop: isDark
-                  ? "1px solid rgba(255, 255, 255, 0.06)"
-                  : "1px solid rgba(0, 0, 0, 0.06)",
+                fontSize: "0.6rem",
+                color: theme.palette.text.secondary,
+                px: 0.5,
+                py: 0.125,
+                borderRadius: 0.25,
+                backgroundColor: isDark
+                  ? "rgba(255, 255, 255, 0.06)"
+                  : "rgba(0, 0, 0, 0.06)",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontSize: "0.6rem",
-                    color: theme.palette.text.secondary,
-                    px: 0.5,
-                    py: 0.125,
-                    borderRadius: 0.25,
-                    backgroundColor: isDark
-                      ? "rgba(255, 255, 255, 0.06)"
-                      : "rgba(0, 0, 0, 0.06)",
-                  }}
-                >
-                  ↑↓
-                </Typography>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontSize: "0.6rem",
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  navigate
-                </Typography>
-              </Box>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontSize: "0.6rem",
-                    color: theme.palette.text.secondary,
-                    px: 0.5,
-                    py: 0.125,
-                    borderRadius: 0.25,
-                    backgroundColor: isDark
-                      ? "rgba(255, 255, 255, 0.06)"
-                      : "rgba(0, 0, 0, 0.06)",
-                  }}
-                >
-                  ↵
-                </Typography>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontSize: "0.6rem",
-                    color: theme.palette.text.secondary,
-                  }}
-                >
-                  select
-                </Typography>
-              </Box>
-            </Box>
+              ↑↓
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                fontSize: "0.6rem",
+                color: theme.palette.text.secondary,
+              }}
+            >
+              navigate
+            </Typography>
           </Box>
-        )}
-      </AnimatePresence>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <Typography
+              variant="caption"
+              sx={{
+                fontSize: "0.6rem",
+                color: theme.palette.text.secondary,
+                px: 0.5,
+                py: 0.125,
+                borderRadius: 0.25,
+                backgroundColor: isDark
+                  ? "rgba(255, 255, 255, 0.06)"
+                  : "rgba(0, 0, 0, 0.06)",
+              }}
+            >
+              ↵
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                fontSize: "0.6rem",
+                color: theme.palette.text.secondary,
+              }}
+            >
+              select
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </Modal>
   );
 };

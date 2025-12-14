@@ -24,7 +24,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckIcon from "@mui/icons-material/Check";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 interface ContactProps {
   email?: string;
@@ -344,31 +343,6 @@ const Contact: React.FC<ContactProps> = ({
                   </IconButton>
                 </Tooltip>
               ))}
-
-              {/* Calendar Link (optional - for scheduling) */}
-              <Tooltip title="Schedule a meeting" arrow>
-                <IconButton
-                  component="a"
-                  href="https://calendly.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    backgroundColor: isDark
-                      ? "rgba(255, 255, 255, 0.05)"
-                      : "rgba(0, 0, 0, 0.04)",
-                    border: `1px solid ${isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.08)"}`,
-                    color: "#e5c07b",
-                    transition: "all 0.2s ease",
-                    "&:hover": {
-                      backgroundColor: "rgba(229, 192, 123, 0.1)",
-                      borderColor: "#e5c07b",
-                      transform: "translateY(-2px)",
-                    },
-                  }}
-                >
-                  <CalendarMonthIcon />
-                </IconButton>
-              </Tooltip>
             </Box>
           </Box>
 
