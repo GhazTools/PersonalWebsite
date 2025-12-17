@@ -34,6 +34,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^7.3.6",
     "@mui/material": "^7.3.6",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "clsx": "^2.1.1",
     "color": "^4.2.3",
     "dayjs": "^1.11.13",
@@ -48,6 +49,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.28.0",
     "react-tooltip": "^5.28.0",
+    "react-vertical-timeline-component": "^3.5.3",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
